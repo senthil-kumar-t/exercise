@@ -49,3 +49,51 @@ unbind_operations_initiated=1130i,
 search_operations_completed=1403i,
 modify_operations_completed=0i,
 modrdn_operations_completed=0i,
+
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-router/nginx/*_access_log
+  fields:
+     index: apigw-production-router-filebeat
+     log_type: apigee-nginx-access
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-router/logs/system.log
+  fields:
+     index: azap-apigw-production-router-system-filebeat
+     log_type: apigee-system
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+  mulitline.negate: true
+  multiline.match: after
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/metrics.log
+  include_lines: ['^vhost,','^heartbeats,']
+  fields:
+     index: azap-apigw-production-router-metricbeat
+     log_type: apigee-router-metrics
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 3
+  index.number_of_replicas: 2
+  index.codec: best_compression
+
+setup.template.name: "agcs-sg-prod-azap-apigw-production-%{[beat.version]}"
+setup.template.index: "agcs-sg-prod-azap-apigw-production-%{[beat.version]}"
+
+fields:
+  env: production
+
+setup.kibana:
+
+output.logstash:
+  hosts: ["10.186.13.140:5044"]
+
