@@ -97,3 +97,37 @@ setup.kibana:
 output.logstash:
   hosts: ["10.186.13.140:5044"]
 
+input {
+     beats {
+       port => 5044
+       host => "0.0.0.0"
+       client_inactivity_timeout => 300
+     }
+}
+
+filter {
+  if ([fields][log_type] == "apigee-nginx-access") {
+        grok {
+          patterns_dir => ["/etc/logstash/patterns"]
+          match => { "message" => [ "%{APIGEE_NGINX_ACCESS_FAILURE1}" , "%{APIGEE_NGINX_ACCESS_FAILURE2}" , "%{APIGEE_NGINX_ACCESS_SUCCESS}"] }
+          remove_field => ["message" , "port"]
+        }
+        grok {
+          match => {"source" => "%{GREEDYDATA}/%{HOSTNAME:index1}~%{GREEDYDATA}"}
+        }
+        mutate {
+          add_field => { "index_name" => "%{index1}-%{[fields][index]}" }
+        }
+  }
+  ...
+  }
+  output {
+     elasticsearch {
+         hosts => ['10.186.13.137:9200','10.186.13.138:9200','10.186.13.139:9200']
+         index => "%{index_name}-%{+YYYY.MM.dd}"
+         user => "elastic"
+         password => "admin123"
+     }
+}
+
+
