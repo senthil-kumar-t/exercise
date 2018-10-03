@@ -1,0 +1,214 @@
+[
+  {
+    "_id": "e1817610-bcc4-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Qpid",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"81f5e610-bcc7-11e8-b499-4fca84f417ac\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-4h",
+      "refreshInterval": {
+        "display": "5 seconds",
+        "pause": false,
+        "section": 1,
+        "value": 5000
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "6c90b020-b76d-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Postgres",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"9f16b670-c0f0-11e8-94b0-976a451fb06f\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"c522f780-c0ef-11e8-94b0-976a451fb06f\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":0,\"y\":3,\"w\":6,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"7f95ca80-c0ef-11e8-94b0-976a451fb06f\"},{\"panelIndex\":\"4\",\"gridData\":{\"x\":6,\"y\":3,\"w\":6,\"h\":3,\"i\":\"4\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"00522e70-c0f0-11e8-94b0-976a451fb06f\"},{\"panelIndex\":\"5\",\"gridData\":{\"x\":0,\"y\":6,\"w\":6,\"h\":3,\"i\":\"5\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"e862dcb0-c0ef-11e8-94b0-976a451fb06f\"},{\"gridData\":{\"w\":6,\"h\":3,\"x\":6,\"y\":6,\"i\":\"6\"},\"version\":\"6.2.4\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"id\":\"fa4df590-c0ef-11e8-94b0-976a451fb06f\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-30m",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "2fb81520-bc32-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Heartbeat (RT & MP)",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"68ad3000-bc31-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"08f26c80-bc9e-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "section": 0,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "7c1f3030-bca3-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Router",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"3c3b98f0-bca3-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"be18d630-bca3-11e8-b499-4fca84f417ac\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"90e43220-bca5-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"5027aa90-bca6-11e8-b499-4fca84f417ac\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "section": 0,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "fe0ffb10-bc17-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Errors",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"a86a7960-bc17-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"f46f3a80-bc17-11e8-b499-4fca84f417ac\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"87659aa0-bc18-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "section": 0,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "bcc055b0-bbe0-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Message Processor",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"a0c69f40-bbe0-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"7945c2c0-bbe5-11e8-b499-4fca84f417ac\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"88b617a0-bbe5-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"939a54b0-bbe5-11e8-b499-4fca84f417ac\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":6,\"x\":6,\"y\":6},\"id\":\"dd546b10-bbfc-11e8-b499-4fca84f417ac\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":6,\"x\":0,\"y\":9},\"id\":\"9f7d3e40-bbff-11e8-b499-4fca84f417ac\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"ec4a81b0-bc0e-11e8-b499-4fca84f417ac\",\"panelIndex\":\"8\",\"title\":\"Message Processor Total Requests\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"9\",\"w\":6,\"x\":6,\"y\":9},\"id\":\"31b9b480-bc11-11e8-b499-4fca84f417ac\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"10\",\"w\":6,\"x\":0,\"y\":12},\"id\":\"8d877f90-bc16-11e8-b499-4fca84f417ac\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "section": 0,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "1a82b9f0-c22a-11e8-94b0-976a451fb06f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee LDAP",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"bda401d0-c229-11e8-94b0-976a451fb06f\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"d8764f40-c229-11e8-94b0-976a451fb06f\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"f66fa960-c562-11e8-94b0-976a451fb06f\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":6,\"x\":0,\"y\":12},\"id\":\"b6962770-c566-11e8-94b0-976a451fb06f\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"6\",\"w\":6,\"x\":6,\"y\":6},\"id\":\"b9885040-c564-11e8-94b0-976a451fb06f\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":6,\"x\":0,\"y\":9},\"id\":\"e2bc1aa0-c564-11e8-94b0-976a451fb06f\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":6,\"x\":6,\"y\":9},\"id\":\"39ffbbf0-c565-11e8-94b0-976a451fb06f\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"10\",\"w\":6,\"x\":6,\"y\":12},\"id\":\"09249000-c565-11e8-94b0-976a451fb06f\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"11\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"ab002360-c562-11e8-94b0-976a451fb06f\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"12\",\"w\":6,\"x\":6,\"y\":15},\"id\":\"40b97410-c563-11e8-94b0-976a451fb06f\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"13\",\"w\":6,\"x\":0,\"y\":15},\"id\":\"a0bf5570-c566-11e8-94b0-976a451fb06f\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"14\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"de465be0-c562-11e8-94b0-976a451fb06f\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"15\",\"w\":6,\"x\":0,\"y\":18},\"id\":\"1f4e8080-c564-11e8-94b0-976a451fb06f\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "b380b970-b8d6-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Cassandra",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"a6591c10-b8d6-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"252c74b0-b8d7-11e8-b499-4fca84f417ac\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"75335d20-b8d7-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"d02c6550-b8d7-11e8-b499-4fca84f417ac\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"6d28d780-b8d8-11e8-b499-4fca84f417ac\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  },
+  {
+    "_id": "867ea280-b7e5-11e8-b499-4fca84f417ac",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Apigee Zookeeper",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"95dafc90-b819-11e8-b499-4fca84f417ac\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"54c25a00-b814-11e8-b499-4fca84f417ac\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":0,\"y\":3},\"id\":\"88282440-b81b-11e8-b499-4fca84f417ac\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":6,\"y\":3},\"id\":\"2dd24470-b81c-11e8-b499-4fca84f417ac\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":6,\"x\":0,\"y\":6},\"id\":\"7afdc390-b822-11e8-b499-4fca84f417ac\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"6\",\"w\":6,\"x\":6,\"y\":6},\"id\":\"b3cfebe0-b8cb-11e8-b499-4fca84f417ac\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":6,\"x\":0,\"y\":9},\"id\":\"9af24d10-b8cc-11e8-b499-4fca84f417ac\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":6,\"x\":6,\"y\":9},\"id\":\"fc212570-b8cc-11e8-b499-4fca84f417ac\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"9\",\"w\":6,\"x\":0,\"y\":12},\"id\":\"46072540-b8cd-11e8-b499-4fca84f417ac\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"10\",\"w\":6,\"x\":6,\"y\":12},\"id\":\"d76188a0-b8cd-11e8-b499-4fca84f417ac\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"11\",\"w\":6,\"x\":0,\"y\":15},\"id\":\"0ed56540-b8ce-11e8-b499-4fca84f417ac\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"12\",\"w\":6,\"x\":6,\"y\":15},\"id\":\"6b53d4f0-b8ce-11e8-b499-4fca84f417ac\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"13\",\"w\":6,\"x\":0,\"y\":18},\"id\":\"31b533a0-b8cf-11e8-b499-4fca84f417ac\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"14\",\"w\":6,\"x\":6,\"y\":18},\"id\":\"85853200-b8cf-11e8-b499-4fca84f417ac\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"15\",\"w\":6,\"x\":0,\"y\":21},\"id\":\"bd3617a0-b8cf-11e8-b499-4fca84f417ac\",\"panelIndex\":\"15\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"16\",\"w\":6,\"x\":6,\"y\":21},\"id\":\"edbdd6f0-b8d0-11e8-b499-4fca84f417ac\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-24h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

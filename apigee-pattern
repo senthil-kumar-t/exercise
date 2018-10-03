@@ -1,0 +1,36 @@
+ALPHABETS [A-Za-z]*
+NAME [A-Za-z0-9._-]*
+UPPERCASEALPHA [A-Z]*
+REQUESTID [A-Za-z0-9-]*
+VIRTUALHOST [A-Za-z0-9.-]*
+BOOLEAN true|false
+ORGNAME [a-z.-]*
+DATA .*?
+
+APIGEE_NGINX_ACCESS_FAILURE1 %{TIMESTAMP_ISO8601:timestamp}\t%{NAME:hostname}\t%{URIHOST:client}\t%{URIHOST:upstream_address}\t%{NUMBER:rtt}\t\-\t\-\t%{NUMBER:status_code:int}\t%{NUMBER:upstream_status_code:int}\t%{NUMBER:request_content_length}\t%{NUMBER:request_bytes}\t%{UPPERCASEALPHA:verb}\s*%{URIPATHPARAM:request_uri}\s*HTTP/%{NUMBER:http_version}\t%{REQUESTID:request_id}\t%{GREEDYDATA:agent}\t%{VIRTUALHOST:virtual_host}\t%{REQUESTID}\t%{IP:xff}\t%{BOOLEAN:message_success}\t%{ALPHABETS:apigee_error_point}\t%{JAVACLASS:error_class}\t%{REQUESTID:apigee_policy}\t-\t-\t-\t%{NUMBER:target_latency}\t-\t-\t%{REQUESTID:region}\t%{NAME:pod}\t%{NAME}\t%{VIRTUALHOST}\t%{NAME}\t%{REQUESTID}\t%{ORGNAME:organization}\t%{NAME:environment}
+
+APIGEE_NGINX_ACCESS_FAILURE2 %{TIMESTAMP_ISO8601:timestamp}\t%{NAME:hostname}\t%{URIHOST:client}\t%{URIHOST:upstream_address}\t%{NUMBER:rtt}\t\-\t\-\t%{NUMBER:status_code:int}\t%{NUMBER:upstream_status_code:int}\t%{NUMBER:request_content_length}\t%{NUMBER:request_bytes}\t%{UPPERCASEALPHA:verb}\s*%{URIPATHPARAM:request_uri}\s*HTTP/%{NUMBER:http_version}\t%{REQUESTID:request_id}\t%{GREEDYDATA:agent}\t%{VIRTUALHOST:virtual_host}\t%{REQUESTID}\t%{IP:xff}\t%{BOOLEAN:message_success}\t%{ALPHABETS:apigee_error_point}\t%{JAVACLASS:error_class}\t%{NAME:apigee_policy_type}/%{NAME:apigee_policy_name}\t%{NAME:apigee_flow_name}\t%{URIPATH:apigee_application}\t%{NAME}\t%{NUMBER:target_latency}\t%{URIPATH}\t%{URIPATH:application_basepath}\t%{REQUESTID:region}\t%{NAME:pod}\t%{NAME}\t%{VIRTUALHOST}\t%{NAME}\t%{REQUESTID}\t%{ORGNAME:organization}\t%{NAME:environment}
+
+APIGEE_NGINX_ACCESS_SUCCESS %{TIMESTAMP_ISO8601:timestamp}\t%{NAME:hostname}\t%{URIHOST:client}\t%{URIHOST:upstream_address}\t%{NUMBER:rtt}\t\-\t\-\t%{NUMBER:status_code:int}\t%{NUMBER:upstream_status_code:int}\t%{NUMBER:request_content_length}\t%{NUMBER:request_bytes}\t%{UPPERCASEALPHA:verb}\s*%{URIPATHPARAM:request_uri}\s*HTTP/%{NUMBER:http_version}\t%{REQUESTID:request_id}\t%{GREEDYDATA:agent}\t%{VIRTUALHOST:virtual_host}\t%{REQUESTID}\t%{IP:xff}\t-\t-\t-\t-\t-\t-\t%{NAME}\t%{NUMBER:target_latency}\t%{URIPATH:apigee_application}\t%{URIPATH:application_basepath}\t%{REQUESTID:region}\t%{NAME:pod}\t%{NAME}\t%{VIRTUALHOST}\t%{NAME}\t%{REQUESTID}\t%{ORGNAME:organization}\t%{NAME:environment}
+
+APIGEE_MP_PROXY_METRIC proxy,%{GREEDYDATA},env=%{NAME:environment},org=%{NAME:organization},pod=%{NAME:pod},proxy=%{NAME:apiproxy},%{DATA}2xx=%{INT:proxy_2xx:int},%{DATA}3xx=%{INT:proxy_3xx:int},%{DATA}4xx=%{INT:proxy_4xx:int},%{DATA}5xx=%{INT:proxy_5xx:int}%{DATA}avg_latency=%{INT:proxy_avg_latency:int}%{GREEDYDATA}total=%{INT:proxy_total:int}%{GREEDYDATA}
+
+APIGEE_MP_HEAP_METRIC heap,%{GREEDYDATA},pod=%{NAME:pod},%{GREEDYDATA}p_used=%{NUMBER:heap_usage_pcti:int},%{GREEDYDATA}
+
+APIGEE_MP_THREAD_METRIC threads,%{GREEDYDATA},pod=%{NAME:pod},%{GREEDYDATA}count=%{NUMBER:thread_count:int},%{GREEDYDATA}
+
+APIGEE_MP_NIO_METRIC nio,%{GREEDYDATA}pod=%{NAME:pod},%{GREEDYDATA}accepted=%{NUMBER:nio_accepted:int},%{GREEDYDATA}conn_pending=%{NUMBER:nio_pending_conn:int},%{GREEDYDATA}connected=%{NUMBER:nio_connected:int},%{GREEDYDATA}
+
+APIGEE_MP_FAULT_METRIC ^faults,%{GREEDYDATA}env=%{NAME:environment},org=%{NAME:organization},pod=%{NAME:pod},proxy=%{NAME:apiproxy},%{GREEDYDATA}apigee_errors=%{NUMBER:apigee_errors:int},policy_errors=%{NUMBER:policy_errors:int},target_errors=%{NUMBER:target_errors:int}%{GREEDYDATA}$
+
+APIGEE_MP_TARGET_METRIC ^target,app=edge,pod=%{NAME:pod},service=message-processor,target=%{NAME:target} %{GREEDYDATA},avg_latency=%{INT:target_avg_latency:int},%{GREEDYDATA},total=%{INT:target_total:int}%{GREEDYDATA}$
+
+APIGEE_MP_HEARTBEAT_METRIC heartbeats,app=edge,pod=%{NAME:pod},%{GREEDYDATA},up=%{NUMBER:mp_up:int},%{GREEDYDATA}
+
+APIGEE_ROUTER_VHOST_METRIC ^vhost,app=nginx,env=%{NAME:environment},org=%{NAME:organization},service=edge-router,vhost=%{VIRTUALHOST:virtual_host} (200=%{INT:vhost_200:int},)?(201=%{INT:vhost_201:int},)?(202=%{INT:vhost_202:int},)?(204=%{INT:vhost_204:int},)?(2xx=%{INT},)?(301=%{INT:vhost_301:int},)?(302=%{INT:vhost_302:int},)?(3xx=%{INT},)?(400=%{INT:vhost_400:int},)?(401=%{INT:vhost_401:int},)?(404=%{INT:vhost_404:int},)?(4xx=%{INT},)?(500=%{INT:vhost_500:int},)?(501=%{INT:vhost_501:int},)?(502=%{INT:vhost_502:int},)?%{GREEDYDATA}$
+
+APIGEE_ROUTER_HEARTBEAT_METRIC heartbeats,app=edge,pod=%{NAME:pod},%{GREEDYDATA},up=%{NUMBER:router_up:int},%{GREEDYDATA}
+
+APIGEE_QPID_METRIC qpid_queues,name=%{NAME:queue_name} autoDelete=False,%{GREEDYDATA},msgDepth=%{NUMBER:queue_depth:int}i,%{GREEDYDATA}
+
+APIGEE_LDAP_METRIC ^openldap,host=%{HOSTNAME:host},%{GREEDYDATA}server=%{IP:ldaphost} %{GREEDYDATA:stats} %{NUMBER}$

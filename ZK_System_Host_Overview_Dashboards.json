@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "zk_79ffd6e0-faa0-11e6-947f-177f697178b8",
+    "_type": "dashboard",
+    "_source": {
+      "title": "[Metricbeat System] Host overview-Zookeeper/Cassandra",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":6,\"x\":0,\"y\":11},\"id\":\"zk_6b7b9a40-faa1-11e6-86b1-cd7735ff7e23\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":6,\"x\":6,\"y\":5},\"id\":\"zk_4d546850-1b15-11e7-b09e-037021c4f8df\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":6,\"x\":6,\"y\":11},\"id\":\"zk_089b85d0-1b16-11e7-b09e-037021c4f8df\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":6,\"x\":0,\"y\":8},\"id\":\"zk_bfa5e400-1b16-11e7-b09e-037021c4f8df\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":6,\"x\":6,\"y\":14},\"id\":\"zk_e0f001c0-1b18-11e7-b09e-037021c4f8df\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"6\",\"w\":6,\"x\":0,\"y\":14},\"id\":\"zk_2e224660-1b19-11e7-b09e-037021c4f8df\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":6,\"x\":0,\"y\":5},\"id\":\"zk_ab2d1e90-1b1a-11e7-b09e-037021c4f8df\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":6,\"x\":6,\"y\":8},\"id\":\"zk_4e4bb1e0-1b1b-11e7-b09e-037021c4f8df\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"9\",\"w\":2,\"x\":4,\"y\":1},\"id\":\"zk_26732e20-1b91-11e7-bec4-a5e9ec5cab8b\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"10\",\"w\":2,\"x\":0,\"y\":1},\"id\":\"zk_83e12df0-1b91-11e7-bec4-a5e9ec5cab8b\",\"panelIndex\":\"10\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"11\",\"w\":2,\"x\":2,\"y\":1},\"id\":\"zk_d3166e80-1b91-11e7-bec4-a5e9ec5cab8b\",\"panelIndex\":\"11\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"12\",\"w\":2,\"x\":6,\"y\":1},\"id\":\"zk_522ee670-1b92-11e7-bec4-a5e9ec5cab8b\",\"panelIndex\":\"12\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"13\",\"w\":2,\"x\":8,\"y\":1},\"id\":\"zk_1aae9140-1b93-11e7-8ada-3df93aab833e\",\"panelIndex\":\"13\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"14\",\"w\":4,\"x\":8,\"y\":3},\"id\":\"zk_34f97ee0-1b96-11e7-8ada-3df93aab833e\",\"panelIndex\":\"14\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":1,\"i\":\"16\",\"w\":6,\"x\":0,\"y\":0},\"id\":\"zk_System-Navigation\",\"panelIndex\":\"16\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"21\",\"w\":2,\"x\":0,\"y\":3},\"id\":\"zk_19e123b0-4d5a-11e7-aee5-fdc812cc3bec\",\"panelIndex\":\"21\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"22\",\"w\":2,\"x\":2,\"y\":3},\"id\":\"zk_d2e80340-4d5c-11e7-aa29-87a97a796de6\",\"panelIndex\":\"22\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"23\",\"w\":2,\"x\":6,\"y\":3},\"id\":\"zk_825fdb80-4d1d-11e7-b5f2-2b7c1895bf32\",\"panelIndex\":\"23\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"25\",\"w\":2,\"x\":10,\"y\":1},\"id\":\"zk_96976150-4d5d-11e7-aa29-87a97a796de6\",\"panelIndex\":\"25\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"27\",\"w\":6,\"x\":0,\"y\":17},\"id\":\"zk_99381c80-4d60-11e7-9a4c-ed99bbcaa42b\",\"panelIndex\":\"27\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"28\",\"w\":6,\"x\":6,\"y\":17},\"id\":\"zk_c5e3cf90-4d60-11e7-9a4c-ed99bbcaa42b\",\"panelIndex\":\"28\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"gridData\":{\"h\":2,\"i\":\"29\",\"w\":2,\"x\":4,\"y\":3},\"id\":\"zk_590a60f0-5d87-11e7-8884-1bb4c3b890e4\",\"panelIndex\":\"29\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":1,\"i\":\"30\",\"w\":6,\"x\":6,\"y\":0},\"id\":\"zk_3d65d450-a9c3-11e7-af20-67db8aecb295\",\"panelIndex\":\"30\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-4h",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "section": 0,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":\"beat.name:\\\"sgazp0066\\\"\"}}"
+      }
+    }
+  },
+  {
+    "_id": "99074350-c08a-11e8-94b0-976a451fb06f",
+    "_type": "dashboard",
+    "_source": {
+      "title": "[Metricbeat System] Overview - Zookeeper/Cassandra",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"panelIndex\":\"9\",\"gridData\":{\"x\":0,\"y\":0,\"w\":12,\"h\":1,\"i\":\"9\"},\"id\":\"zk_System-Navigation\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"11\",\"gridData\":{\"x\":0,\"y\":1,\"w\":2,\"h\":2,\"i\":\"11\"},\"id\":\"zk_c6f2ffd0-4d17-11e7-a196-69b9a7a020a9\",\"type\":\"visualization\",\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"version\":\"6.2.4\"},{\"panelIndex\":\"12\",\"gridData\":{\"x\":6,\"y\":3,\"w\":6,\"h\":5,\"i\":\"12\"},\"id\":\"zk_fe064790-1b1f-11e7-bec4-a5e9ec5cab8b\",\"type\":\"visualization\",\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"version\":\"6.2.4\"},{\"panelIndex\":\"13\",\"gridData\":{\"x\":0,\"y\":3,\"w\":6,\"h\":5,\"i\":\"13\"},\"id\":\"zk_855899e0-1b1c-11e7-b09e-037021c4f8df\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"14\",\"gridData\":{\"x\":0,\"y\":8,\"w\":12,\"h\":6,\"i\":\"14\"},\"id\":\"zk_7cdb1330-4d1a-11e7-a196-69b9a7a020a9\",\"type\":\"visualization\",\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0% - 15%\":\"rgb(247,252,245)\",\"15% - 30%\":\"rgb(199,233,192)\",\"30% - 45%\":\"rgb(116,196,118)\",\"45% - 60%\":\"rgb(35,139,69)\"}}},\"version\":\"6.2.4\"},{\"panelIndex\":\"16\",\"gridData\":{\"x\":8,\"y\":1,\"w\":2,\"h\":2,\"i\":\"16\"},\"id\":\"zk_522ee670-1b92-11e7-bec4-a5e9ec5cab8b\",\"type\":\"visualization\",\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 100\":\"rgb(0,104,55)\"}}},\"version\":\"6.2.4\"},{\"panelIndex\":\"17\",\"gridData\":{\"x\":10,\"y\":1,\"w\":2,\"h\":2,\"i\":\"17\"},\"id\":\"zk_1aae9140-1b93-11e7-8ada-3df93aab833e\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"18\",\"gridData\":{\"x\":6,\"y\":1,\"w\":2,\"h\":2,\"i\":\"18\"},\"id\":\"zk_825fdb80-4d1d-11e7-b5f2-2b7c1895bf32\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"19\",\"gridData\":{\"x\":4,\"y\":1,\"w\":2,\"h\":2,\"i\":\"19\"},\"id\":\"zk_d3166e80-1b91-11e7-bec4-a5e9ec5cab8b\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"panelIndex\":\"20\",\"gridData\":{\"x\":2,\"y\":1,\"w\":2,\"h\":2,\"i\":\"20\"},\"id\":\"zk_83e12df0-1b91-11e7-bec4-a5e9ec5cab8b\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"highlightAll\":true,\"version\":true,\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"*\",\"query\":\"*\"}}}}"
+      }
+    }
+  }
+]

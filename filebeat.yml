@@ -1,0 +1,89 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-management-server/logs/startupruntimeerrors.log
+  fields:
+     index: azap-apigw-production-management-starterrors-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-management-server/logs/events.log
+  fields:
+     index: azap-apigw-production-management-events-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-management-server/logs/system.log
+  fields:
+     index: azap-apigw-production-management-system-filebeat
+     log_type: apigee-system
+  multiline.pattern: '^[0-9]{4}-[0-9]{2}-[0-9]{2}'
+  multiline.negate: true
+  multiline.match: after
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-management-server/logs/access.log
+  fields:
+     index: apigw-production-management-filebeat
+     log_type: apigee-mgmt-access
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/apigee-openldap/apigee-openldap.log
+  fields:
+     index: azap-apigw-production-oldap-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/apigee-openldap/config.log
+  fields:
+     index: azap-apigw-production-oldap-config-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-ui/application.log
+  fields:
+     index: azap-apigw-production-edgeui-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/edge-ui/config.log
+  fields:
+     index: azap-apigw-production-edgeui-config-filebeat
+     log_type: apigee-generic
+- type: log
+  enabled: true
+  paths:
+    - /opt/apigee/var/log/telegraf/metrics.log
+  fields:
+     index: azap-apigw-production-openldap-metricbeat
+     log_type: apigee-oldap-metrics
+
+  
+
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+
+setup.template.settings:
+  index.number_of_shards: 3
+  index.number_of_replicas: 2
+  index.codec: best_compression
+
+setup.template.name: "agcs-sg-prod-azap-apigw-production-%{[beat.version]}"
+setup.template.index: "agcs-sg-prod-azap-apigw-production-%{[beat.version]}"
+
+fields:
+  env: production
+
+setup.kibana:
+
+output.logstash:
+  hosts: ["10.186.13.140:5044"]
