@@ -1,0 +1,1627 @@
+2018-10-15 16:19:43,872  main INFO  KERNEL - MicroKernel.initInternals() : MicroKernel.start() : MicroKernel start initiated...
+2018-10-15 16:19:43,921  main INFO  KERNEL - MicroKernel.logJavaAndOSProperties() : Java/OS Properties - {java.ext.dirs=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/ext:/usr/java/packages/lib/ext, java.runtime.name=OpenJDK Runtime Environment, java.runtime.version=1.8.0_181-b13, java.specification.version=1.8, java.vendor=Oracle Corporation, java.security.nssprovider.enabled=false, java.class.version=52.0, java.vendor.url=http://java.oracle.com/, java.specification.name=Java Platform API Specification, java.security.auth.login.config=/opt/apigee/edge-message-processor-4.18.05-0.0.1580/conf/jaas.config, java.awt.printerjob=sun.print.PSPrinterJob, java.net.preferIPv4Stack=true, os.arch=amd64, java.vm.version=25.181-b13, os.name=Linux, java.home=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre, os.version=3.10.0-862.11.6.el7.x86_64, java.endorsed.dirs=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.181-3.b13.el7_5.x86_64/jre/lib/endorsed, java.version=1.8.0_181, java.awt.graphicsenv=sun.awt.X11GraphicsEnvironment, java.vm.specification.version=1.8, java.vendor.url.bug=http://bugreport.sun.com/bugreport/, java.vm.specification.name=Java Virtual Machine Specification, java.specification.vendor=Oracle Corporation, java.vm.vendor=Oracle Corporation, java.vm.info=mixed mode, java.library.path=/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib, java.security.properties=../conf/jvmsecurity.properties, java.vm.name=OpenJDK 64-Bit Server VM, java.vm.specification.vendor=Oracle Corporation, java.io.tmpdir=/var/tmp}
+
+2018-10-15 16:19:44,020  main INFO  KERNEL.CONFIG - KernelConfiguration.loadKernelProperties() : KernelConfiguration.loadKernelProperties() : MicroKernel properties : {checkmarx.scan.validator.enabled=true, debugsession.timeout=120, profile=message-processor, java.security.properties=../conf/jvmsecurity.properties, datastax.loadTokenToHostMappingForKeyspaces=false, jsse.enableSNIExtension=true, jute.maxbuffer=10485750, java.io.tmpdir=/var/tmp, has.monetization=${microkernel_hasMonetization}, cwc_pod=default, qpid.session.command_limit=524288, bundle.validation.schema.enabled=true, com.warrenstrange.googleauth.rng.algorithm=SHA1PRNG, apigee.syslogger.dateFormat={T}conf_system_apigee.syslogger.dateFormat{/T}, default.response.format=json, advisory.logging.enabled=false, java.net.preferIPv4Stack=true, rbac.number.of.tries.for.email.search=1, jdk.tls.allowUnsafeServerCertChange=true, astyanax.datastores=taurus-datastore,kms-datastore,dc-datastore,cache-datastore,counter-datastore,keyvaluemap-datastore,application-datastore,audit-datastore,apimodel-datastore,auth-datastore,scheduler-datastore,edgenotification-datastore, javax.xml.xpath.XPathFactory=http://java.sun.com/jaxp/xpath/dom=org.apache.xpath.jaxp.XPathFactoryImpl, migration.mode.status=false, useG1GC=false, javax.xml.transform.TransformerFactory=net.sf.saxon.TransformerFactoryImpl, useStringDeduplication=false, qpid.session.byte_limit=8388608, lib.dir.name=lib/infra/services,lib/gateway/services,lib/gateway/steps,lib/analytics/services, sun.net.maxDatagramSockets=2048, skip.gatewaycassandraconnectionForHybrid=false, checkmarx.scan.validator.epochtimestampmillis=0, pod=gateway-1, com.warrenstrange.googleauth.rng.algorithmProvider=SUN, validation.targetendpoint.connection.check.enabled=true, casssandra.maxConnectTimeInMillis=-1, setCodeCache=false, json.request.schema.validation.enabled=true, license.file.location=/opt/apigee/customer/conf/license.txt, log.level=INFO, checkmarx.scan.validator.newentity.enabled={T}conf_system_checkmarx.scan.validator.newentity.enabled{/T}, validation.entity.name.enabled=true, shutdownServicesOnStop=true, region=dc-2, python.verbose=error, bundle.validation.enabled=false, authenticated.user.header.name=X-Apigee-Current-User, javacallout.policy.validate=false, java.security.nssprovider.enabled=false}
+2018-10-15 16:19:44,900  main ERROR KERNEL - MicroKernel.scanDeployments() : MicroKernel.scanDeployments() : Some modules and services were present in the profile but not in the class path
+2018-10-15 16:19:44,900  main ERROR KERNEL - MicroKernel.scanDeployments() : Missing modules: []
+2018-10-15 16:19:44,900  main ERROR KERNEL - MicroKernel.scanDeployments() : Missing services: [RuntimeDeployService]
+2018-10-15 16:19:44,901  main ERROR KERNEL - MicroKernel.scanDeployments() : Not exiting this time but continuing anyway.
+2018-10-15 16:19:45,123  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : MachineKeyService that implements InitializeAwareService
+2018-10-15 16:19:45,126  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : MachineKeyService
+2018-10-15 16:19:45,127  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : ZooKeeperService that implements InitializeAwareService
+2018-10-15 16:19:45,228  main INFO  o.a.c.f.i.CuratorFrameworkImpl - CuratorFrameworkImpl.start() : Starting
+2018-10-15 16:19:45,268  main-EventThread ERROR o.a.c.ConnectionState - ConnectionState.checkState() : Authentication failed
+2018-10-15 16:19:45,271  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.start() : Use binocular pathwatcher service: false
+2018-10-15 16:19:45,271  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.start() : Use curator based pathwatcher service: false
+2018-10-15 16:19:45,273  main INFO  c.a.e.ValidationService - ValidationService.register() : Registered validator for component [zookeeper]
+2018-10-15 16:19:45,273  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : ZooKeeperService
+2018-10-15 16:19:45,281  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : WebService that implements InitializeAwareService
+2018-10-15 16:19:45,310  main INFO  o.eclipse.jetty.util.log - Log.initialized() : Logging initialized @4118ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-10-15 16:19:45,429  main INFO  REST - Container.getConnectors() : Container.getConnectors() - Serving http and http2c on port - 8082
+2018-10-15 16:19:45,462  main-EventThread INFO  o.a.c.f.s.ConnectionStateManager - ConnectionStateManager.postState() : State change: CONNECTED
+2018-10-15 16:19:45,493  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : WebService
+2018-10-15 16:19:45,494  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : CommunicationService that implements InitializeAwareService
+2018-10-15 16:19:45,507  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : CommunicationService
+2018-10-15 16:19:45,512  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : EventService that implements InitializeAwareService
+2018-10-15 16:19:45,522  main INFO  FILE_LOGGER - BufferedWriter.start() : Starting logging thread 
+2018-10-15 16:19:45,526  main INFO  FILE_LOGGER - SizeBasedFileRotator.<init>() : Creating sizeBased rotator with maxSize 104857600
+2018-10-15 16:19:45,526  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : EventService
+2018-10-15 16:19:45,526  Thread-1 INFO  FILE_LOGGER - BufferedWriter.run() : Signalling threadInit completion
+2018-10-15 16:19:45,526  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : RepositoryService that implements InitializeAwareService
+2018-10-15 16:19:45,619  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : RepositoryService
+2018-10-15 16:19:45,636  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : ServerRegistrationService that implements InitializeAwareService
+2018-10-15 16:19:45,683  main INFO  REGISTRATION - ServerRegistrationServiceImpl.initResolutionScopes() : server types [scheduler-datastore, audit-datastore, mint-rdbms-datastore, kms-datastore, dc-datastore, application-datastore, postgres-server, configstore-service, counter-datastore, user-settings-datastore, analytics-datastore, router, endpoint, consumer-server, ldap, message-processor, edgenotification-datastore, dw-server, ingest-server, qpid-server, cache-datastore, zookeeper, apimodel-datastore, taurus-datastore, keyvaluemap-datastore, notification-datastore, mint-datastore, ax-hadoop-ingester, management-server, identityzone-datastore, reportcrud-datastore, auth-datastore]
+2018-10-15 16:19:45,691  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : ServerRegistrationService
+2018-10-15 16:19:45,694  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Initializing service : ServerBindService that implements InitializeAwareService
+2018-10-15 16:19:45,697  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.init() : ServiceDeployer.init() : Successfully initialized the service : ServerBindService
+2018-10-15 16:19:45,921  main INFO  K.DATASTORE.NOSQL - EntityCache.<clinit>() : Default KMS entity cache TTL set to 3
+2018-10-15 16:19:46,346  main INFO  S.SECURITY_POLICY_SERVICE - SecurityPolicyServiceImpl.start() : REST mgmt api access is allowed only to the deployed orgs in message-processor
+2018-10-15 16:19:46,347  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : SecurityPolicyService
+2018-10-15 16:19:46,347  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : DataStoreService
+2018-10-15 16:19:46,347  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : MachineKeyService
+2018-10-15 16:19:46,348  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ZooKeeperService
+2018-10-15 16:19:46,356  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /featureflag/{featureName}/global/on/{time}, async is false
+2018-10-15 16:19:46,369  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /featureflag/{featureName}/global/off/{time}, async is false
+2018-10-15 16:19:46,371  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /featureflag/{featureName}/{subType}/{name}/on/{time}, async is false
+2018-10-15 16:19:46,373  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /featureflag/{featureName}/{subType}/{name}/off/{time}, async is false
+2018-10-15 16:19:46,375  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : FeatureFlagService
+2018-10-15 16:19:46,376  main INFO  FILE_LOGGER - BufferedWriter.start() : Starting logging thread 
+2018-10-15 16:19:46,377  main INFO  FILE_LOGGER - SizeBasedFileRotator.<init>() : Creating sizeBased rotator with maxSize 134217728
+2018-10-15 16:19:46,379  Thread-3 INFO  FILE_LOGGER - BufferedWriter.run() : Signalling threadInit completion
+2018-10-15 16:19:46,382  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : MonitoringService
+2018-10-15 16:19:46,383  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : WebService
+2018-10-15 16:19:46,390  WebServer INFO  o.e.jetty.server.Server - Server.doStart() : jetty-9.4.0.v20161208
+2018-10-15 16:19:46,618  main WARN  i.n.b.ServerBootstrap - Slf4JLogger.warn() : Unknown channel option 'SO_KEEPALIVE' for channel '[id: 0x73766ab8]'
+2018-10-15 16:19:46,634  main WARN  i.n.b.ServerBootstrap - Slf4JLogger.warn() : Unknown channel option 'TCP_NODELAY' for channel '[id: 0x73766ab8]'
+2018-10-15 16:19:46,644  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CommunicationService
+2018-10-15 16:19:46,650  main WARN  KERNEL.DEPLOYMENT - ServiceDeployer.loadPropertiesFromResources() : ServiceDeployer.getProperties : Resource file router-message-processor-communication.properties not found in classpath
+2018-10-15 16:19:46,667  WebServer INFO  o.e.j.w.StandardDescriptorProcessor - StandardDescriptorProcessor.visitServlet() : NO JSP Support for /, did not find org.apache.jasper.servlet.JspServlet
+2018-10-15 16:19:46,685  WebServer INFO  o.e.jetty.server.session - DefaultSessionIdManager.doStart() : DefaultSessionIdManager workerName=node0
+2018-10-15 16:19:46,685  WebServer INFO  o.e.jetty.server.session - DefaultSessionIdManager.doStart() : No SessionScavenger set, using defaults
+2018-10-15 16:19:46,687  WebServer INFO  o.e.jetty.server.session - HouseKeeper.startScavenging() : Scavenging every 660000ms
+2018-10-15 16:19:46,689  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for system.properties set from data.dir: /var/tmp to data.dir: /opt/apigee/var/log/edge-message-processor
+2018-10-15 16:19:46,690  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http_client_service.properties set from enable.markDown: true to enable.markDown: false
+2018-10-15 16:19:46,690  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http_client_service.properties set from forward.proxy:  to forward.proxy: 
+2018-10-15 16:19:46,690  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http_client_service.properties set from markDown.time.milliseconds: 3000 to markDown.time.milliseconds: 3000
+2018-10-15 16:19:46,690  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http_client_service.properties set from markDown.canary.request.interval: 1000 to markDown.canary.request.interval: 1000
+2018-10-15 16:19:46,691  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.cert.path: /opt/apigee-tengine/conf.d/${org}-${env}-${vhost}.cert to load.balancing.driver.nginx.cert.path: /opt/apigee/nginx/conf.d/${org}-${env}-${vhost}.cert
+2018-10-15 16:19:46,691  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.common.pool.conf: /opt/apigee-tengine/conf.d/0-upstream-pools.conf to load.balancing.driver.nginx.common.pool.conf: /opt/apigee/nginx/conf.d/0-upstream-pools.conf
+2018-10-15 16:19:46,691  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.log.dir: /var/log/apigee/nginx to load.balancing.driver.nginx.log.dir: /var/log/apigee/nginx
+2018-10-15 16:19:46,691  WebServer WARN  o.e.j.s.SecurityHandler - ConstraintSecurityHandler.checkPathsWithUncoveredHttpMethods() : ServletContext@o.e.j.w.WebAppContext@12e8ed68{/,file:///opt/apigee/edge-message-processor-4.18.05-0.0.1580/webapps/api/,STARTING}{/api} has uncovered http methods for path: /
+2018-10-15 16:19:46,691  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.free.trial.https.conf: /opt/apigee-tengine/conf.d/0-free-trial-https.conf to load.balancing.driver.nginx.free.trial.https.conf: /opt/apigee/nginx/conf.d/free-trial-https.conf
+2018-10-15 16:19:46,693  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.configure.script: /etc/init.d/apigee-tengine reload to load.balancing.driver.nginx.configure.script: /opt/apigee/nginx/scripts/apigee-nginx reload
+2018-10-15 16:19:46,693  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.listen.endpoint: listen ${address}:${port} ${ssl} ${vh_level_listen_options} ${default_server}; to load.balancing.driver.nginx.fallback.listen.endpoint: listen ${address}:${port} ${ssl} ${vh_level_listen_options} default_server ;
+2018-10-15 16:19:46,693  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.key.permissions: 400 to load.balancing.driver.nginx.key.permissions: 400
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.any.global.parameters.conf: /opt/apigee-tengine/conf.d/config.global to load.balancing.driver.nginx.any.global.parameters.conf: /opt/apigee/nginx/conf.d/config.global
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.health.check.server.template: 
+  server {
+       listen 15999;
+       server_name _;
+       proxy_http_version 1.1;
+       proxy_set_header Connection "";
+       proxy_set_header Host $http_host;
+       proxy_set_header X-Apigee.heartbeat true;
+       proxy_read_timeout 1s;
+       proxy_send_timeout 1s;
+       proxy_connect_timeout 500ms;
+       proxy_pass_header Server;
+       proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504 http_599;
+       server_tokens off;
+       location /v1/servers/self {
+           return 200;
+           access_log off;
+       }
+
+${locations} }
+ to load.balancing.driver.nginx.health.check.server.template: 
+  server {
+       listen 15999 default_server;
+       server_name _;
+       proxy_http_version 1.1;
+       proxy_set_header Connection "";
+       proxy_set_header Host $http_host;
+       proxy_set_header X-Apigee.heartbeat true;
+       proxy_read_timeout 1s;
+       proxy_send_timeout 1s;
+       proxy_connect_timeout 500ms;
+       proxy_pass_header Server;
+       proxy_next_upstream http_599;
+       server_tokens off;
+       error_log /var/log/apigee/nginx/edge_health_error_log error;
+       access_log /var/log/apigee/nginx/edge_health_access_log elb;
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+       location /v1/servers/self {
+           return ${return_code};
+           access_log off;
+       }
+       location /v1/regions/${self_region}/pods/${self_pod}/servers/self {
+           return ${return_code};
+           access_log off;
+       }
+       ${locations}
+
+  }
+
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.stop.on.shutdown: true to load.balancing.driver.nginx.stop.on.shutdown: true
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.status.script: /etc/init.d/apigee-tengine status to load.balancing.driver.nginx.status.script: /opt/apigee/nginx/scripts/apigee-nginx status
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.global.http.parameters.template: limit_conn_zone $server_name zone=perserver:10m;
+limit_req_zone $server_name $server_port zone=100_rps:10m rate=100r/s;
+ to load.balancing.driver.nginx.global.http.parameters.template: 
+limit_conn_zone $server_name zone=perserver:10m;
+limit_conn_status 429;
+ssl_ciphers  HIGH:!aNULL:!MD5:!3DES;
+ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+ssl_dhparam /opt/apigee/nginx/conf/dhparam2048.pem;
+ssl_prefer_server_ciphers  on;
+server_names_hash_max_size 2048;
+keepalive_timeout  65;
+proxy_read_timeout 57;
+large_client_header_buffers 8 16k;
+proxy_buffer_size 64k;
+proxy_buffers 8 128k;
+proxy_busy_buffers_size 128k;
+server_names_hash_bucket_size 128;
+check_shm_size 10M;
+ignore_invalid_headers off;
+proxy_connect_timeout 5s;
+limit_conn_zone $binary_remote_addr zone=perclient:10m;
+client_body_temp_path /var/log/apigee/nginx/client_temp;
+proxy_temp_path /var/log/apigee/nginx/proxy_temp;
+proxy_request_buffering on;
+proxy_buffering on;
+
+lua_package_path "/opt/apigee/router-current/bin/lua_scripts/?.lua;;";
+log_format router    '$time_iso8601\t$hostname\t$remote_addr:$remote_port\t'
+                     '$upstream_addr\t$request_time\t-\t-\t'
+                     '$status\t$upstream_status\t$request_length\t'
+                     '$body_bytes_sent\t'
+                     '$request_method $request_path $server_protocol\t$upstream_http_x_apigee_message_id\t'
+                     '$http_user_agent\t$host\t$hostname-$pid-$connection-$connection_requests\t$my_nginx_var_xff\t'
+                     '$upstream_http_x_apigee_fault_flag\t$upstream_http_x_apigee_fault_source\t$upstream_http_x_apigee_fault_code\t'
+                     '$upstream_http_x_apigee_fault_policy\t$upstream_http_x_apigee_fault_flow\t$upstream_http_x_apigee_fault_revision\t'
+                     '$upstream_http_x_apigee_dp_color\t$my_x_apigee_target_latency\t'
+                     '$upstream_http_x_apigee_proxy\t$upstream_http_x_apigee_proxy_basepath\t'
+                     '$self_region\t$self_pod\t$self_color\t$ssl_protocol\t$upstream_pod\t$upstream_region\t'
+                     '$upstream_org\t$upstream_env';
+
+
+2018-10-15 16:19:46,694  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.ssl.http.hc.dns.template: upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync 127.0.0.1:8500/v1/kv/upstreams/${dns.name} upsync_timeout=6m upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/nginx/conf.d/0-{dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 type=http default_down=false port=8998;
+  check_keepalive_requests 360;
+  check_http_send "GET / HTTP/1.1\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+ to load.balancing.driver.nginx.upstream.ssl.http.hc.dns.template: 
+upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync :8500/v1/kv/${upsync.path}/ upsync_timeout=30s upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/apigee/nginx/conf.d/0-${dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 type=http default_down=true port=8998;
+  check_keepalive_requests 360;
+  check_http_send "GET / HTTP/1.1\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.map.conf: /opt/apigee-tengine/conf.d/0-map.conf to load.balancing.driver.nginx.map.conf: /opt/apigee/nginx/conf.d/0-map.conf
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.ssl.dns.template: upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync 127.0.0.1:8500/v1/kv/upstreams/${dns.name} upsync_timeout=6m upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/nginx/conf.d/0-{dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 type=http port=8080 default_down=false;
+  check_keepalive_requests 360;
+  check_http_send "GET /v1/servers/self/up HTTP/1.0\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+ to load.balancing.driver.nginx.upstream.ssl.dns.template: 
+upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync :8500/v1/kv/${upsync.path}/ upsync_timeout=30s upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/apigee/nginx/conf.d/0-${dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 port=8080 type=http default_down=true;
+  check_keepalive_requests 360;
+  check_http_send "GET /v1/servers/self/up HTTP/1.0\r\nConnection: keep-alive\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.any.global.template: 
+ to load.balancing.driver.nginx.any.global.template: 
+
+
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.run.config.test.during.bootstrap: true to load.balancing.driver.nginx.run.config.test.during.bootstrap: true
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.stop.script: /etc/init.d/apigee-tengine stop to load.balancing.driver.nginx.stop.script: /opt/apigee/nginx/scripts/apigee-nginx stop
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.conf.file: /opt/apigee-tengine/conf.d/${org}_${env}_${vhost}.conf to load.balancing.driver.nginx.conf.file: /opt/apigee/nginx/conf.d/${org}_${env}_${vhost}.conf
+2018-10-15 16:19:46,695  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.configtest.script: /etc/init.d/apigee-tengine configtest to load.balancing.driver.nginx.configtest.script: /opt/apigee/nginx/scripts/apigee-nginx configtest
+2018-10-15 16:19:46,696  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.free.trial.http.template: server {
+        ${listenEndpoints}
+        server_name _ ;
+        server_tokens off;
+        error_log /var/log/apigee/nginx/free_trial_http_error_log error;
+        access_log /var/log/apigee/nginx/free_trial_http_access_log elb;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        set $upstream "";
+        location / {
+                rewrite_by_lua_file /opt/apigee/router-current/bin/lua_scripts/set_upstream.lua;
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+
+                proxy_pass $upstream;
+        }
+
+        error_page 400 404 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee-nginx/html;
+               internal;
+
+        }
+} to load.balancing.driver.nginx.free.trial.http.template: server {
+        ${listenEndpoints}
+        server_name _ ;
+        server_tokens off;
+        error_log /var/log/apigee/nginx/free-trial~http.80_error_log error;
+        access_log /var/log/apigee/nginx/free-trial~http.80_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        set $upstream "";
+        set $upstream_stats_key "";
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+        location / {
+                rewrite_by_lua_file /opt/apigee/router-current/bin/lua_scripts/set_upstream.lua;
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:80;
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+
+                proxy_pass $upstream;
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               internal;
+               
+        }
+}
+
+2018-10-15 16:19:46,696  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.free.trial.http.conf: /opt/apigee-tengine/conf.d/0-free-trial-http.conf to load.balancing.driver.nginx.free.trial.http.conf: /opt/apigee/nginx/conf.d/free-trial-http.conf
+2018-10-15 16:19:46,696  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.server.ssl.template: server {
+   ${listenEndpoints}
+   server_name  localhost;
+   ssl_certificate      /etc/pki/tls/certs/localhost.crt;
+   ssl_certificate_key  /etc/pki/tls/private/localhost.key
+;   ssl_session_cache    shared:SSL:10m;
+   ssl_session_timeout  10m;
+   location / {
+       root   html;
+       index  index.html index.htm;
+   }
+}
+ to load.balancing.driver.nginx.fallback.server.ssl.template: 
+  server {
+          ${listenEndpoints}
+          server_name _;
+          ssl_certificate      /etc/pki/tls/certs/localhost.crt;
+          ssl_certificate_key  /etc/pki/tls/private/localhost.key;
+          ssl_session_cache    shared:SSL:10m;
+          ssl_session_timeout  10m;
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+          location / {
+              root /opt/apigee/nginx/html;
+              index  index.html index.htm;
+              
+          }
+          
+          server_tokens off;
+          error_page 400 404 405 500 502 503 504 /50x.html;
+          location /50x.html {
+                 root /opt/apigee/nginx/html;
+                 internal;
+          }
+      }
+
+2018-10-15 16:19:46,696  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.dns.name.template: ${pod}-${region}-mps to load.balancing.driver.nginx.upstream.dns.name.template: applications/edge/types/message-processor/regions/${region}/pods/${pod}
+2018-10-15 16:19:46,696  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.server.ssl2way.client.cert.forwarding.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_client_certificate ${clientcert};
+        ssl_verify_client on;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log crit;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log elb;
+        set $client_connection "$remote_addr:$remote_port;$server_addr:$server_port";
+        limit_req zone=1k_rps;        req_status server;        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host ${vhalias}:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                set $upstream_pod ${upstream_pod};
+                set $upstream_region ${upstream_region};
+                proxy_pass ${upstreamProto}://${org}_${env}_${vhost}_mp_pool;
+        }
+} to load.balancing.driver.nginx.server.ssl2way.client.cert.forwarding.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_stapling ${sslStapling};
+        ssl_client_certificate ${clientcert};
+        ssl_verify_client on;
+        ssl_verify_depth 3;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log error;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port;ssl;$ssl_client_s_dn";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+        ${vh_level_overrides}
+        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_set_header X-Apigee.ssl.client.s.dn $ssl_client_s_dn;
+                proxy_set_header X-Apigee.ssl.client.i.dn $ssl_client_i_dn;
+                proxy_set_header X-Apigee.ssl.client.cert.serial $ssl_client_serial;
+                proxy_set_header X-Apigee.ssl.client.cert.fingerprint $ssl_client_fingerprint;
+                proxy_set_header X-Apigee.ssl.server.name $ssl_server_name;
+                proxy_set_header X-Apigee.ssl.session.id $ssl_session_id;
+                proxy_set_header X-Apigee.ssl.client.raw.cert $ssl_client_raw_cert;
+                proxy_pass_header Server;
+                
+                set $upstream_stats_key "$host";
+                set $upstream_org "${org}";
+                set $upstream_env "${env}";
+                set $upstream_pod "${upstream.pod}";
+                set $upstream_region "${upstream.region}";
+                set_by_lua_block $dummy_var {
+                    ngx.shared.vhost_orgenv:set(ngx.var.upstream_stats_key, ngx.var.upstream_org.."$$$"..ngx.var.upstream_env)
+                    return 0
+                }
+
+                
+                proxy_next_upstream ${vh_retry_options};
+                proxy_next_upstream_timeout 57;
+                proxy_pass ${upstreamProto}://${targetPoolName};
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               internal;
+               
+        }
+}
+2018-10-15 16:19:46,697  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.target.pool.template: upstream ${targetPoolName} {
+${targetpool}keepalive 1024;check interval=5000 rise=2 fall=2 timeout=3000 type=http;check_keepalive_requests 360;check_http_send "GET / HTTP/1.1
+Connection: keep-alive
+X-Apigee.heartbeat: true
+
+";check_http_expect_alive http_2xx http_3xx;  }
+ to load.balancing.driver.nginx.target.pool.template: upstream ${targetPoolName} {
+${targetpool}
+    keepalive 1024;
+    check interval=5000 rise=1 fall=2 timeout=3000 type=http default_down=true;
+    check_keepalive_requests 360;
+    check_http_send "GET / HTTP/1.1\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+    check_http_expect_alive http_2xx http_3xx;
+    
+}
+
+2018-10-15 16:19:46,697  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.server.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log crit;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log elb;
+        set $client_connection "$remote_addr:$remote_port;$server_addr:$server_port";
+        limit_req zone=1k_rps;        req_status server;        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host ${vhalias}:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                set $upstream_pod ${upstream_pod};
+                set $upstream_region ${upstream_region};
+                proxy_pass ${upstreamProto}://${org}_${env}_${vhost}_mp_pool;
+        }
+} to load.balancing.driver.nginx.server.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log error;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+        ${vh_level_overrides}
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+                
+                set $upstream_stats_key "$host";
+                set $upstream_org "${org}";
+                set $upstream_env "${env}";
+                set $upstream_pod "${upstream.pod}";
+                set $upstream_region "${upstream.region}";
+                set_by_lua_block $dummy_var {
+                    ngx.shared.vhost_orgenv:set(ngx.var.upstream_stats_key, ngx.var.upstream_org.."$$$"..ngx.var.upstream_env)
+                    return 0
+                }
+
+                
+                proxy_next_upstream ${vh_retry_options};
+                proxy_next_upstream_timeout 57;
+                proxy_pass ${upstreamProto}://${targetPoolName};
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               internal;
+               
+        }
+}
+2018-10-15 16:19:46,697  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.map.template: map $upstream_http_server $my_nginx_var_server {
+""  "Apigee Router";
+default $upstream_http_server;
+}
+more_set_headers 'Server: $my_nginx_var_server';
+more_clear_headers 'X-Apigee.Message-ID';
+ to load.balancing.driver.nginx.map.template: 
+   
+   
+   map $http_x_forwarded_port $my_nginx_var_port {
+       "" $server_port;
+       default $http_x_forwarded_port;
+   }
+
+   map $http_x_forwarded_proto $my_nginx_var_proto {
+       "" $scheme;
+       default $http_x_forwarded_proto;
+   }
+
+   map $upstream_http_server $my_nginx_var_server {
+       ""  "";
+       default $upstream_http_server;
+   }
+
+   geo $my_nginx_var_trust {
+        default         false;
+        10.0.0.0/8 true;
+        192.168.0.0/16 true;
+        172.16.0.0/12 true;
+        130.211.0.0/22 true;
+        35.191.0.0/16 true;
+   }
+
+   map $my_nginx_var_trust $trusted_http_x_forwarded_for {
+        true $http_x_forwarded_for;
+        default $proxy_add_x_forwarded_for;
+   }
+
+   map $http_x_forwarded_for $temp_my_nginx_var_xff {
+        "" $remote_addr;
+        default $trusted_http_x_forwarded_for;
+   }
+
+   map $http_x_forwarded_for $proxy_protocol_xff_pre {
+        "" "";
+        default "$http_x_forwarded_for, ";
+   }
+
+   map $proxy_protocol_addr $my_nginx_var_xff {
+        "" $temp_my_nginx_var_xff;
+        default $proxy_protocol_xff_pre$proxy_protocol_addr;
+   }
+
+   map $remote_port $my_nginx_var_remote_port {
+       "" 0;
+       default $remote_port;
+   }
+
+   map $http_upgrade $connection_header {
+     default   '';
+     websocket Upgrade;
+   }
+
+   map $upstream_http_x_apigee_target_latency $my_x_apigee_target_latency {
+       ""  "-1";
+       default $upstream_http_x_apigee_target_latency;
+   }
+
+   map $request_uri $request_path {
+       ~(?<path>[^?]*) $path;
+   }
+
+   map region $self_region {
+       default "${self_region}";
+   }
+
+   map pod $self_pod {
+       default "${self_pod}";
+   }
+
+   map color $self_color {
+       default "${self_color}";
+   }
+
+   map upstream_pod $upstream_pod {
+       default "${upstream_pod}";
+   }
+
+   map upstream_region $upstream_region {
+       default "${upstream_region}";
+   }
+
+   map upstream_org $upstream_org {
+       default "";
+   }
+
+   map upstream_env $upstream_env {
+       default "";
+   }
+
+   more_set_headers 'Server: $my_nginx_var_server';
+   more_clear_headers 'X-Apigee.*';
+
+   
+
+   
+   #geo ip variables initialized with default values 
+   map "" $allowed_country {
+       default yes;
+   }
+   map "" $allowed_region {
+       default yes;
+   }
+   map "" $geoip2_data_country_code {
+       default US;
+   }
+   map "" $ua_allowed_region {
+       default "";
+   }
+
+
+2018-10-15 16:19:46,697  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.health.check.server.conf: /opt/apigee/nginx/conf.d/0-edge-health.conf to load.balancing.driver.nginx.health.check.server.conf: /opt/apigee/nginx/conf.d/0-edge-health.conf
+2018-10-15 16:19:46,697  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.target.pool.ssl.template: upstream ${targetPoolName} {
+${targetpool}keepalive 1024;check interval=5000 rise=2 fall=2 timeout=3000 type=http port=8080;check_keepalive_requests 360;check_http_send "GET /v1/servers/self/reachable HTTP/1.0
+Connection: keep-alive
+
+";check_http_expect_alive http_2xx http_3xx;  }
+ to load.balancing.driver.nginx.target.pool.ssl.template: upstream ${targetPoolName} {
+${targetpool}
+    keepalive 1024;
+    check interval=5000 rise=1 fall=2 timeout=3000 type=http port=8080 default_down=true;
+    check_keepalive_requests 360;
+    check_http_send "GET /v1/servers/self/reachable HTTP/1.0\r\nConnection: keep-alive\r\n\r\n";
+    check_http_expect_alive http_2xx http_3xx;
+    
+}
+
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.clientcert.path: /opt/apigee-tengine/conf.d/${org}-${env}-${vhost}-client.pem to load.balancing.driver.nginx.clientcert.path: /opt/apigee/nginx/conf.d/${org}-${env}-${vhost}-client.pem
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.isGCP: load.balancing.driver.nginx.isGCP to load.balancing.driver.nginx.isGCP: false
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.target.entry.template:     server: ${target}
+ to load.balancing.driver.nginx.target.entry.template: 	     server ${target} max_fails=0;
+
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.listen.endpoint: listen ${address}:${port} ${ssl} ${vh_level_listen_options}; to load.balancing.driver.nginx.listen.endpoint: listen ${address}:${port} ${ssl} ${vh_level_listen_options} ;
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.key.path: /opt/apigee-tengine/conf.d/${org}-${env}-${vhost}.key to load.balancing.driver.nginx.key.path: /opt/apigee/nginx/conf.d/${org}-${env}-${vhost}.key
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.conf.enabled: load.balancing.driver.nginx.fallback.server.default.ssl.template.enabled to load.balancing.driver.nginx.fallback.conf.enabled: false
+2018-10-15 16:19:46,698  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.stats.template: lua_check_client_abort on;
+lua_shared_dict  upstream_stats 5M;
+
+server {
+    listen       127.0.0.1:9000;
+
+    error_log /var/log/apigee/nginx/upstreamstats_error.log error;
+    access_log /var/log/apigee/nginx/upstreamstats_access.log elb;
+
+    location ~/upstreamstats$ {
+        access_log off;
+        allow 127.0.0.1;
+        deny all;
+        content_by_lua_file '/opt/apigee/router-current/bin/lua_scripts/upstream_stats_all.lua';
+    }
+    location ~/upstreamstats/(?<vhost>\w+$) {
+        access_log off;
+        allow 127.0.0.1;
+        deny all;
+        content_by_lua_file '/opt/apigee/router-current/bin/lua_scripts/upstream_stats_by_vhost.lua';
+    }
+} to load.balancing.driver.nginx.upstream.stats.template: 
+lua_check_client_abort on;
+lua_shared_dict  upstream_stats 5M;
+lua_shared_dict  vhost_orgenv   5M;
+
+
+server {
+    listen       127.0.0.1:9000;
+
+    error_log /var/log/apigee/nginx/upstreamstats_error.log error;
+    access_log /var/log/apigee/nginx/upstreamstats_access.log elb;
+
+    location ~/upstream/metrics$ {
+        access_log off;
+        allow 127.0.0.1;
+        deny all;
+        content_by_lua_file /opt/apigee/router-current/bin/lua_scripts/metrics.lua;
+    }
+}
+
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.server.ssl2way.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_client_certificate ${clientcert};
+        ssl_verify_client on;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log crit;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log elb;
+        set $client_connection "$remote_addr:$remote_port;$server_addr:$server_port";
+        limit_req zone=1k_rps;        req_status server;        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host ${vhalias}:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                set $upstream_pod ${upstream_pod};
+                set $upstream_region ${upstream_region};
+                proxy_pass ${upstreamProto}://${org}_${env}_${vhost}_mp_pool;
+        }
+} to load.balancing.driver.nginx.server.ssl2way.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_stapling ${sslStapling};
+        ssl_client_certificate ${clientcert};
+        ssl_verify_client on;
+        ssl_verify_depth 3;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log error;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port;ssl;$ssl_client_s_dn";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+        ${vh_level_overrides}
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+                
+                set $upstream_stats_key "$host";
+                set $upstream_org "${org}";
+                set $upstream_env "${env}";
+                set $upstream_pod "${upstream.pod}";
+                set $upstream_region "${upstream.region}";
+                set_by_lua_block $dummy_var {
+                    ngx.shared.vhost_orgenv:set(ngx.var.upstream_stats_key, ngx.var.upstream_org.."$$$"..ngx.var.upstream_env)
+                    return 0
+                }
+
+                
+                proxy_next_upstream ${vh_retry_options};
+                proxy_next_upstream_timeout 57;
+                proxy_pass ${upstreamProto}://${targetPoolName};
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               internal;
+               
+        }
+}
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.server.conf: /opt/apigee-tengine/conf.d/0-fallback.conf to load.balancing.driver.nginx.fallback.server.conf: /opt/apigee/nginx/conf.d/0-fallback.conf
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.stats.conf: /opt/apigee-tengine/conf.d/0-upstream-stats.conf to load.balancing.driver.nginx.upstream.stats.conf: /opt/apigee/nginx/conf.d/0-upstream-stats.conf
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.server.default.ssl.template.enabled: false to load.balancing.driver.nginx.fallback.server.default.ssl.template.enabled: false
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.conf.path:  to load.balancing.driver.nginx.conf.path: /opt/apigee/nginx/conf.d
+2018-10-15 16:19:46,699  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.global.http.parameters.conf: /opt/apigee-tengine/conf.d/0-default.conf to load.balancing.driver.nginx.global.http.parameters.conf: /opt/apigee/nginx/conf.d/0-default.conf
+2018-10-15 16:19:46,700  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver:  to load.balancing.driver: 
+2018-10-15 16:19:46,700  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.upstream.dns.template: upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync 127.0.0.1:8500/v1/kv/upstreams/${dns.name} upsync_timeout=6m upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/nginx/conf.d/0-{dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 type=http default_down=false;
+  check_keepalive_requests 360;
+  check_http_send "GET / HTTP/1.1\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+ to load.balancing.driver.nginx.upstream.dns.template: 
+upstream ${dns.name} {
+  #dummy server entry to make nginx config check happy
+  server 127.0.0.1:11111;
+  upsync :8500/v1/kv/${upsync.path}/ upsync_timeout=30s upsync_interval=500ms upsync_type=consul strong_dependency=off;
+  upsync_dump_path /opt/apigee/nginx/conf.d/0-${dns.name}.tmp;
+  keepalive 1024;
+  check interval=3000 rise=1 fall=2 timeout=1000 type=http default_down=true;
+  check_keepalive_requests 360;
+  check_http_send "GET / HTTP/1.1\r\nConnection: keep-alive\r\nX-Apigee.heartbeat: true\r\n\r\n";
+  check_http_expect_alive http_2xx http_3xx;
+}
+
+2018-10-15 16:19:46,703  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.start.script: /etc/init.d/apigee-tengine start to load.balancing.driver.nginx.start.script: /opt/apigee/nginx/scripts/apigee-nginx start
+2018-10-15 16:19:46,703  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.free.trial.https.template: server {
+        ${listenEndpoints}
+        server_name _ ;
+        server_tokens off;
+        ssl_certificate /etc/pki/tls/certs/localhost.crt;
+        ssl_certificate_key /etc/pki/tls/private/localhost.key;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/free_trial_https_error_log error;
+        access_log /var/log/apigee/nginx/free_trial_https_access_log elb;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port;ssl";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        set $upstream "";
+
+        location / {
+                rewrite_by_lua_file /opt/apigee/router-current/bin/lua_scripts/set_upstream.lua;
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+
+                proxy_pass $upstream;
+        }
+
+        error_page 400 404 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee-nginx/html;
+               internal;
+
+        }
+} to load.balancing.driver.nginx.free.trial.https.template: server {
+        ${listenEndpoints}
+        server_name _ ;
+        server_tokens off;
+        ssl_certificate /etc/pki/tls/certs/localhost.crt;
+        ssl_certificate_key /etc/pki/tls/private/localhost.key;
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/free-trial~https.443_error_log error;
+        access_log /var/log/apigee/nginx/free-trial~https.443_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port;ssl";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        set $upstream "";
+        set $upstream_stats_key "";
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+        location / {
+                rewrite_by_lua_file /opt/apigee/router-current/bin/lua_scripts/set_upstream.lua;
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:443;
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+
+                proxy_pass $upstream;
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               internal;
+               
+        }
+}
+
+2018-10-15 16:19:46,703  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.server.ssl.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log crit;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log elb;
+        set $client_connection "$remote_addr:$remote_port;$server_addr:$server_port";
+        limit_req zone=1k_rps;        req_status server;        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection "";
+                proxy_set_header Host ${vhalias}:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                set $upstream_pod ${upstream_pod};
+                set $upstream_region ${upstream_region};
+                proxy_pass ${upstreamProto}://${org}_${env}_${vhost}_mp_pool;
+                proxy_next_upstream ${vh_retry_options};
+        }
+} to load.balancing.driver.nginx.server.ssl.template: server {
+        ${listenEndpoints}
+        server_name ${vhaliases};
+        server_tokens off;
+        ssl_certificate ${cert};
+        ssl_certificate_key ${key};
+        ssl_stapling ${sslStapling};
+        ssl_session_cache shared:SSL:10m;
+        ssl_session_timeout 10m;
+        error_log /var/log/apigee/nginx/${org}~${env}.${port}_error_log error;
+        access_log /var/log/apigee/nginx/${org}~${env}.${port}_access_log router;
+        set $client_connection "$remote_addr:$my_nginx_var_remote_port;$server_addr:$server_port;ssl";
+        limit_conn perserver 5000;
+        req_status server;
+        client_max_body_size 0;
+        
+        log_by_lua_file /opt/apigee/router-current/bin/lua_scripts/collect_upstream_stats.lua;
+        ${vh_level_overrides}
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+        location / {
+                proxy_redirect off;
+                proxy_http_version 1.1;
+                proxy_set_header Connection $connection_header;
+                proxy_set_header Host $http_host;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header X-Apigee.Host $host:${port};
+                proxy_set_header X-Apigee.client.connection $client_connection;
+                proxy_set_header X-Forwarded-For $my_nginx_var_xff;
+                proxy_set_header X-Forwarded-Port $my_nginx_var_port;
+                proxy_set_header X-Forwarded-Proto $my_nginx_var_proto;
+                proxy_set_header X-Apigee.Message-ID $hostname-$pid-$connection-$connection_requests;
+                proxy_pass_header Server;
+                
+                
+                set $upstream_stats_key "$host";
+                set $upstream_org "${org}";
+                set $upstream_env "${env}";
+                set $upstream_pod "${upstream.pod}";
+                set $upstream_region "${upstream.region}";
+                set_by_lua_block $dummy_var {
+                    ngx.shared.vhost_orgenv:set(ngx.var.upstream_stats_key, ngx.var.upstream_org.."$$$"..ngx.var.upstream_env)
+                    return 0
+                }
+
+                proxy_next_upstream ${vh_retry_options};
+                proxy_next_upstream_timeout 57;
+                proxy_pass ${upstreamProto}://${targetPoolName};
+        }
+
+        error_page 400 404 405 500 502 503 504 /50x.html;
+        location /50x.html {
+               root /opt/apigee/nginx/html;
+               
+               internal;
+        }
+}
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.fallback.server.template: server {
+   ${listenEndpoints}
+   server_name  localhost;
+   location / {
+       root   html;
+       index  index.html index.htm;
+   }
+}
+ to load.balancing.driver.nginx.fallback.server.template: 
+  server {
+        ${listenEndpoints}
+          server_name _;
+        
+   if ($allowed_country != yes) {
+       return 444;
+   }
+   set $allowed_region yes;
+   if ($geoip2_data_country_code = UA) {
+       set $allowed_region $ua_allowed_region;
+   }
+   if ($allowed_region != yes) {
+       return 444;
+   }
+
+          location / {
+              root /opt/apigee/nginx/html;
+              index  index.html index.htm;
+              
+          }
+
+       
+       server_tokens off;
+       error_page 400 404 405 500 502 503 504 /50x.html;
+       location /50x.html {
+              root /opt/apigee/nginx/html;
+              internal;
+          }
+      }
+
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for load.balancing.config set from load.balancing.driver.nginx.health.check.location.template:       location = /${orgEnvLocation} {
+       limit_conn perclient 10;
+       proxy_pass ${targetPoolName};
+    }
+
+ to load.balancing.driver.nginx.health.check.location.template: 
+      location = /${orgEnvLocation} {
+            limit_conn perclient 10;
+            proxy_pass ${targetPoolName};
+      }
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPTransport.io.timeout.millis: 120000 to HTTPTransport.io.timeout.millis: 55000
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.block.localhost.connections: false to HTTPClient.block.localhost.connections: false
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPRequest.allow.PUT.without.content.length: false to HTTPRequest.allow.PUT.without.content.length: false
+2018-10-15 16:19:46,704  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPServer.methods.allowed: [OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE] to HTTPServer.methods.allowed: [OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, PATCH]
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTP.ignore.allow_header.for.405: false to HTTP.ignore.allow_header.for.405: false
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPServer.Host.invalidChars: #$% to HTTPServer.Host.invalidChars: #$%
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPResponse.body.buffer.limit: 3145728 to HTTPResponse.body.buffer.limit: 10485760
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from Fault.stacktrace.required: false to Fault.stacktrace.required: false
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HOP_BY_HOP_Headers: [Connection, Keep-Alive, Proxy-Authenticate, Proxy-Authorization, TE, Trailers, Transfer-Encoding, Upgrade] to HOP_BY_HOP_Headers: [Connection, Keep-Alive, Proxy-Authenticate, Proxy-Authorization, TE, Trailers, Transfer-Encoding, Upgrade]
+2018-10-15 16:19:46,705  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPTransport.max.current.channels: 800 to HTTPTransport.max.current.channels: 800
+2018-10-15 16:19:46,706  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.block.sitelocal.connections: false to HTTPClient.block.sitelocal.connections: false
+2018-10-15 16:19:46,706  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPRequest.body.buffer.limit: 3145728 to HTTPRequest.body.buffer.limit: 10485760
+2018-10-15 16:19:46,706  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPTransport.tcp.nodelay: true to HTTPTransport.tcp.nodelay: true
+2018-10-15 16:19:46,706  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.use.proxy: true to HTTPClient.use.proxy: true
+2018-10-15 16:19:46,706  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.dns.ttl: 60 to HTTPClient.dns.ttl: 60
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPTransport.max.client.count: 40000 to HTTPTransport.max.client.count: 0
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPTransport.contenttype.allow.comma.separator: false to HTTPTransport.contenttype.allow.comma.separator: false
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPRequest.queryparam.allow.semicolon.separator: false to HTTPRequest.queryparam.allow.semicolon.separator: false
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.connect.timeout.millis: 60000 to HTTPClient.connect.timeout.millis: 3000
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.use.tunneling: true to HTTPClient.use.tunneling: true
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.max.circular.ref.count: 0 to HTTPClient.max.circular.ref.count: 0
+2018-10-15 16:19:46,707  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTP.retain.headers: [Content-Type, Connection, Content-Encoding, Transfer-Encoding, Content-Length, XTestId] to HTTP.retain.headers: [Content-Type, Connection, Content-Encoding, Transfer-Encoding, Content-Length, XTestId]
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPRequest.allow.POST.without.content.length: false to HTTPRequest.allow.POST.without.content.length: false
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.use.separate.js.niothread: true to HTTPClient.use.separate.js.niothread: true
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from request.uri.default.charset: UTF-8 to request.uri.default.charset: UTF-8
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTP.useragent.allow.comma: true to HTTP.useragent.allow.comma: true
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPServer.backlog: 100 to HTTPServer.backlog: 100
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPServer.max.keepalive.clients: 2000 to HTTPServer.max.keepalive.clients: -1
+2018-10-15 16:19:46,708  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPClient.disable.url.hostname.validation: true to HTTPClient.disable.url.hostname.validation: true
+2018-10-15 16:19:46,709  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for http.properties set from HTTPServer.action.during.shutdown: response;599;Server Going Down to HTTPServer.action.during.shutdown: response;599;Server Going Down
+2018-10-15 16:19:46,709  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for analytics.properties set from enable.proxy.level.analytics.flags: false to enable.proxy.level.analytics.flags: false
+2018-10-15 16:19:46,709  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for forward_proxy.properties set from forward.proxies: [] to forward.proxies: []
+2018-10-15 16:19:46,709  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from max.node.scripts.restart.delay: 600 to max.node.scripts.restart.delay: 600
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from max.node.scripts.restart: 0 to max.node.scripts.restart: 0
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from query.api.proxies.in.parallel: false to query.api.proxies.in.parallel: false
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from lazy.deployment: false to lazy.deployment: false
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from configstore.enabled: false to configstore.enabled: false
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from poll.new.orgs.envs.interval.secs: 180 to poll.new.orgs.envs.interval.secs: 180
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from bean.retry.enabled: true to bean.retry.enabled: true
+2018-10-15 16:19:46,710  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from configstore.url:  to configstore.url: http://localhost:8080/v1
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from deployment.validation.enabled: false to deployment.validation.enabled: false
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from deploy.allow.override: true to deploy.allow.override: true
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from node.scripts.initial.restart.delay: 10 to node.scripts.initial.restart.delay: 10
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from check.sanity: false to check.sanity: false
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from max.deploy.retries: 3 to max.deploy.retries: 3
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from load.from.revision.bean: false to load.from.revision.bean: false
+2018-10-15 16:19:46,711  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from async.bootstrap: true to async.bootstrap: true
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from max.test.ssl.host.count: 1 to max.test.ssl.host.count: 1
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from bootstrap.executor.thread.count: 10 to bootstrap.executor.thread.count: 10
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from deploy.missing.application: true to deploy.missing.application: true
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from poll.new.orgs.envs: false to poll.new.orgs.envs: false
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from node.scripts.successful.start.time: 60 to node.scripts.successful.start.time: 60
+2018-10-15 16:19:46,712  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from disable.test.ssl.api: false to disable.test.ssl.api: false
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from load.servers.in.scope: true to load.servers.in.scope: true
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from apply.hot: true to apply.hot: true
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from basepath.validation.enabled: false to basepath.validation.enabled: false
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from undeployment.allow.delay: true to undeployment.allow.delay: true
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from allow.deployment.over.http: false to allow.deployment.over.http: false
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for deployment.properties set from node.scripts.max.concurrent.starts: 100 to node.scripts.max.concurrent.starts: 100
+2018-10-15 16:19:46,713  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for HTTPServer.config set from HTTPServer.Host.invalidChars: #$% to HTTPServer.Host.invalidChars: #$%
+2018-10-15 16:19:46,714  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for HTTPServer.config set from HEAD, DELETE, POST, GET, OPTIONS, PUT, PATCH to TRACE, HEAD, DELETE, POST, GET, OPTIONS, PUT, PATCH
+2018-10-15 16:19:46,714  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for sense.properties set from sense.update.interval: 300 to sense.update.interval: 300
+2018-10-15 16:19:46,714  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for sense.properties set from sense.server.v2.url: https://apigee-aisrv-poc-prod.apigee.net/sense/v1/filters to sense.server.v2.url: https://apigee-aisrv-poc-prod.apigee.net/sense/v1/filters
+2018-10-15 16:19:46,714  main INFO  COMPONENT-CONFIGURATION - AbstractConfiguration.load() : Configuration option for sense.properties set from sense.server.url: https://apigee-aisrv-poc-prod.apigee.net/sense/v1/reports/trafficFilters to sense.server.url: https://apigee-aisrv-poc-prod.apigee.net/sense/v1/reports/trafficFilters
+2018-10-15 16:19:47,033  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ComponentConfigurationService
+2018-10-15 16:19:47,361  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : HttpClientService
+2018-10-15 16:19:47,393  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ConnectorService
+2018-10-15 16:19:47,394  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : DebugService
+2018-10-15 16:19:47,395  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : EventService
+2018-10-15 16:19:47,396  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : RepositoryService
+2018-10-15 16:19:47,396  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : DeploymentStatusService
+2018-10-15 16:19:47,449  main INFO  HTTP.SERVICE - HTTPTransport.configure() : Block LocalHost connection=false. Block site local connections=false.
+2018-10-15 16:19:47,457  main INFO  HTTP.SERVICE - HTTPTransport.start() : Idle threshold of concurrent channels is 800 (400 per selector). Idle channels will be closed when this limit is reached.
+2018-10-15 16:19:47,464  Apigee-Timer-0 ERROR CMgmt - ConnectorServiceImpl.refreshToken() : Connector Management API auth token generation failed: 0 null
+2018-10-15 16:19:47,523  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : HTTPTransport
+2018-10-15 16:19:47,524  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : LogService
+2018-10-15 16:19:47,657  WebServer INFO  o.e.j.s.h.ContextHandler - ContextHandler.doStart() : Started o.e.j.w.WebAppContext@12e8ed68{/,file:///opt/apigee/edge-message-processor-4.18.05-0.0.1580/webapps/api/,AVAILABLE}{/api}
+2018-10-15 16:19:47,659  WebServer INFO  o.e.j.s.AbstractConnector - AbstractConnector.doStart() : Started ServerConnector@28665a31{HTTP/1.1,[http/1.1, h2c]}{0.0.0.0:8082}
+2018-10-15 16:19:47,660  WebServer INFO  o.e.jetty.server.Server - Server.doStart() : Started @6468ms
+2018-10-15 16:19:47,695  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : OrganizationService
+2018-10-15 16:19:47,740  main INFO  c.a.i.InputValidator - InputValidator.getEnforcementTimestamp() : checkmarx enforcement timestamp set to 0
+2018-10-15 16:19:47,749  main WARN  REGISTRATION - CommunicationInfoBuilder.loadIPAddresses() : CommunicationInfoBuilder.loadIPAddresses : File /opt/apigee/ec2.properties is missing. Will use localhost as default for all the hosts
+2018-10-15 16:19:48,807  ServerProtocolChildGroup-RPC-0 ERROR RPC - RPCMachineImpl.processFrame() : Unknown Target com.apigee.cluster.v2 for the RPC request frame [type=REQUEST dataType=PROTO2RPC correlationId=568669]
+2018-10-15 16:19:48,813  ServerProtocolChildGroup-RPC-0 ERROR RPC - ServerHandleImpl.inboundBufferUpdated() : Error processing frame [type=REQUEST dataType=PROTO2RPC correlationId=568669]: Unknown target com.apigee.cluster.v2
+2018-10-15 16:19:49,703  main INFO  REGISTRATION - ServerRegistrationServiceImpl.storeServerRegistrationPath() : Registering the server uuid 0ede3a10-a98f-4cb7-8c66-afc5d8df2067 with region dc-2 and pod gateway-1 information
+2018-10-15 16:19:49,863  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ServerRegistrationService
+2018-10-15 16:19:49,863  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ServerBindService
+2018-10-15 16:19:49,978  main INFO  SERVICES.CONFIGSTORE - ConfigStoreClientServiceImpl.start() : Start complete
+2018-10-15 16:19:49,978  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ConfigStoreService
+2018-10-15 16:19:49,979  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ServerBindObserverService
+2018-10-15 16:19:50,000  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : MetricsService
+2018-10-15 16:19:50,005  main INFO  CLUSTER - ClusterServiceImpl.start() : Registering to join a cluster with servers of type router
+2018-10-15 16:19:50,005  main INFO  CLUSTER - ClusterServiceImpl.start() : Registering to join a cluster with servers of type message-processor
+2018-10-15 16:19:50,009  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/router/{uuid}, async is true
+2018-10-15 16:19:50,121  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/bindings/servers/{uuid}/organizations/{org}/environments/{env}, async is true
+2018-10-15 16:19:50,191  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/bindings/orgs/{org}, async is true
+2018-10-15 16:19:50,203  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/bindings/orgenvs/{org}/environments/{env}, async is true
+2018-10-15 16:19:50,227  main INFO  SERVER.BINDING - ServerBindServiceImpl.getBindings() : Could not fetch bindings from cache for uuid 06cdc4f8-e939-4c4f-8852-f80b9db6ec5c. Fetching from repo and adding to cache
+2018-10-15 16:19:50,233  pool-6-thread-1 INFO  c.a.i.InputValidator - InputValidator.getEnforcementTimestamp() : checkmarx enforcement timestamp set to 0
+2018-10-15 16:19:50,246  main INFO  SERVER.BINDING - ServerBindServiceImpl.getBindings() : Could not fetch bindings from cache for uuid 1cf9b2ed-5a06-4033-bf3e-4413935e93d1. Fetching from repo and adding to cache
+2018-10-15 16:19:50,261  main INFO  SERVER.BINDING - ServerBindServiceImpl.getBindings() : Could not fetch bindings from cache for uuid 44d22e5c-ff1b-4462-8dcb-f16bd7d978e6. Fetching from repo and adding to cache
+2018-10-15 16:19:50,268  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of 44d22e5c-ff1b-4462-8dcb-f16bd7d978e6 is now HB_FAILED. handle = 10.213.13.25 at 1539580790268 
+2018-10-15 16:19:50,322  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of 44d22e5c-ff1b-4462-8dcb-f16bd7d978e6 is now CONNECTED. handle = 10.213.13.25 at 1539580790322 
+2018-10-15 16:19:50,327  main INFO  SERVER.BINDING - ServerBindServiceImpl.getBindings() : Could not fetch bindings from cache for uuid eda9b559-f690-4ff6-9822-d87a463d15fe. Fetching from repo and adding to cache
+2018-10-15 16:19:50,332  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of eda9b559-f690-4ff6-9822-d87a463d15fe is now HB_FAILED. handle = 10.213.13.24 at 1539580790332 
+2018-10-15 16:19:50,334  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of eda9b559-f690-4ff6-9822-d87a463d15fe is now CONNECTED. handle = 10.213.13.24 at 1539580790334 
+2018-10-15 16:19:50,364  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/message-processor/{uuid}, async is true
+2018-10-15 16:19:50,374  main INFO  SERVER.BINDING - ServerBindServiceImpl.getBindings() : Could not fetch bindings from cache for uuid 510428be-6fd9-425b-bd22-22557acdbb03. Fetching from repo and adding to cache
+2018-10-15 16:19:50,388  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of 510428be-6fd9-425b-bd22-22557acdbb03 is now HB_FAILED. handle = 10.213.13.23 at 1539580790388 
+2018-10-15 16:19:50,390  RPCClientClientProtocolChildGroup-RPC-0 INFO  CLUSTER - ServerState.setState() : State of 510428be-6fd9-425b-bd22-22557acdbb03 is now CONNECTED. handle = 10.213.13.23 at 1539580790390 
+2018-10-15 16:19:50,443  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ClusterService
+2018-10-15 16:19:50,462  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/cache-datastore/{uuid}, async is true
+2018-10-15 16:19:50,522  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key cache#10.213.13.16_10.213.13.18_10.213.13.19 for config name cache-datastore
+2018-10-15 16:19:50,579  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: ONE.
+2018-10-15 16:19:50,579  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: ONE.
+2018-10-15 16:19:50,714  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=cache-datastore,ServiceType=connectionpool
+2018-10-15 16:19:50,723  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:50,723  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:50,724  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:50,849  main INFO  SERVICES.CACHE - EHCacheFlush.init() : Initialize EHCacheFlush clear expired elements every 300 seconds
+2018-10-15 16:19:50,849  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CacheService
+2018-10-15 16:19:50,992  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : AccessControl
+2018-10-15 16:19:50,996  main INFO  CPS_RUNTIME - CpsRuntimeServiceImpl.start() : Starting CpsRuntimeService, Properties:{all.orgs.cps.in.pod=false, quota.read.localconsistencylevel=LOCAL_QUORUM, cassandra.default.dml_password=NULL, timeseries.read.nonlocalconsistencylevel=QUORUM, kms.read.nonlocalconsistencylevel=QUORUM, kms.cache.appCredentialTtlInSeconds=180, l2cache.write.consistencylevel=ONE, l2cache.cache.enabled=true, kvm.localdc.enabled=true, kvm.read.localconsistencylevel=LOCAL_QUORUM, cassandra.hipaa-ring01.dml_password=NULL, quota.cassandra.defaults.socketReadTimeoutInMillis=10000, quota.perses.enabled=false, timeseries.write.consistencylevel=LOCAL_QUORUM, kvm.cache.enabled=true, kms.cache.enabled=true, l2cache.cassandra.defaults.connectTimeoutInMillis=10000, quota.localdc.enabled=true, kms.perses.enabled=true, timeseries.cassandra.defaults.socketReadTimeoutInMillis=10000, timeseries.read.localconsistencylevel=LOCAL_QUORUM, timeseries.cassandra.defaults.connectTimeoutInMillis=10000, cassandra.default.dml_user=NULL, org.cache.ttl.minutes=10000000, edgex.kms.enabled=false, kms.cassandra.defaults.socketReadTimeoutInMillis=10000, postgres.diamond01_pg.ddl_user=management, quota.maxactive_cassandra_connections=8, kvm.read.nonlocalconsistencylevel=QUORUM, kms.cassandra.defaults.connectTimeoutInMillis=10000, postgres.diamond01_pg.dml_user=management, kvm.cassandra.defaults.connectTimeoutInMillis=10000, edgex.kms.postgres.database=edgex, quota.cassandra.defaults.connectTimeoutInMillis=10000, kms.cache.tokenTtlInSeconds=180, cassandra.hipaa-ring01.dml_user=NULL, quota.cache.enabled=false, timeseries.localdc.enabled=true, kms.maxactive_cassandra_connections=8, kvm.perses.enabled=false, halt.if.keyspaces.missing=false, kvm.cassandra.defaults.socketReadTimeoutInMillis=10000, edgex.kms.postgres.schema=kms, kvm.write.consistencylevel=LOCAL_QUORUM, timeseries.perses.enabled=false, quota.read.nonlocalconsistencylevel=QUORUM, timeseries.maxactive_cassandra_connections=8, postgres.diamond01_pg.dml_password=x02cJOskDmdyg9rADEiuVQ==, quota.write.consistencylevel=LOCAL_QUORUM, l2cache.localdc.enabled=true, timeseries.cache.enabled=false, kvm.maxactive_cassandra_connections=8, l2cache.maxactive_cassandra_connections=8, l2cache.perses.enabled=false, postgres.diamond01_pg.ddl_password=x02cJOskDmdyg9rADEiuVQ==, kms.localdc.enabled=true, l2cache.read.localconsistencylevel=LOCAL_ONE, kms.write.consistencylevel=LOCAL_QUORUM, l2cache.read.nonlocalconsistencylevel=ONE, l2cache.cassandra.defaults.socketReadTimeoutInMillis=10000, kms.read.localconsistencylevel=LOCAL_QUORUM, kms.cache.nonTokenTtlInSeconds=180}
+2018-10-15 16:19:50,999  main INFO  o.a.c.f.i.CuratorFrameworkImpl - CuratorFrameworkImpl.start() : Starting
+2018-10-15 16:19:51,008  main INFO  i.a.t.r.RepositoryFactory - RepositoryFactory.get() : RepositoryFactory: [class io.apigee.tenant.repository.impl.zk.TenantRepositoryImpl]
+2018-10-15 16:19:51,014  main-EventThread ERROR o.a.c.ConnectionState - ConnectionState.checkState() : Authentication failed
+2018-10-15 16:19:51,014  main INFO  ZOOKEEPER.LIBRARY - CuratorBasedPathWatcherService.initWatchingInfra() : Enable Curator In Async mode: true
+2018-10-15 16:19:51,116  main-EventThread INFO  o.a.c.f.s.ConnectionStateManager - ConnectionStateManager.postState() : State change: CONNECTED
+2018-10-15 16:19:51,121  main INFO  ZOOKEEPER.LIBRARY - CuratorBasedPathWatcherService.initWatchingInfra() : Enable Curator In Async mode: true
+2018-10-15 16:19:51,124  main INFO  i.a.t.r.RepositoryFactory - RepositoryFactory.get() : RepositoryFactory: [class io.apigee.tenant.repository.impl.zk.TenantRepositoryImpl]
+2018-10-15 16:19:51,128  main INFO  ORGANIZATION-HELPER - OrganizationHelper.<clinit>() : Reading cps runtime props
+2018-10-15 16:19:51,132  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CpsRuntimeService
+2018-10-15 16:19:51,136  main INFO  S.QUEUECLIENTSERVICE - QueueClientServiceImpl.start() : ackOnReceive set to false
+2018-10-15 16:19:51,136  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : QueueClientService
+2018-10-15 16:19:51,197  main WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: auth_cache has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:51,199  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : AuthenticationService
+2018-10-15 16:19:51,209  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/auth-datastore/{uuid}, async is true
+2018-10-15 16:19:51,216  main WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: creds_cache has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:51,218  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : UserService
+2018-10-15 16:19:51,229  main WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: PermissionsCache has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:51,230  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ResourceService
+2018-10-15 16:19:51,234  main INFO  SERVICES.SECURITY - SecurityServiceImpl.start() : Teams Feature Enabled Flag = false
+2018-10-15 16:19:51,234  main INFO  SERVICES.SECURITY - SecurityServiceImpl.start() : Setting urlencodepath for customroles to: true
+2018-10-15 16:19:51,234  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : SecurityService
+2018-10-15 16:19:51,241  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : TeamService
+2018-10-15 16:19:51,244  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/counter-datastore/{uuid}, async is true
+2018-10-15 16:19:51,251  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key counter#10.213.13.16_10.213.13.18_10.213.13.19 for config name counter-datastore
+2018-10-15 16:19:51,253  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,253  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,256  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=counter-datastore,ServiceType=connectionpool
+2018-10-15 16:19:51,256  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:51,256  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:51,256  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:51,265  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : TimeSeriesCounterService
+2018-10-15 16:19:51,267  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : QuotaService
+2018-10-15 16:19:51,417  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ServerMetricsService
+2018-10-15 16:19:51,418  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : SystemInfoService
+2018-10-15 16:19:51,419  main WARN  KERNEL.DEPLOYMENT - ServiceDeployer.loadPropertiesFromResources() : ServiceDeployer.getProperties : Resource file qpid-defaults.properties not found in classpath
+2018-10-15 16:19:51,428  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/servers/{type}/{uuid}, async is false
+2018-10-15 16:19:51,439  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/scopes/{scope}, async is false
+2018-10-15 16:19:51,445  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}, async is false
+2018-10-15 16:19:51,452  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/properties/{propname}, async is false
+2018-10-15 16:19:51,456  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/consumer-groups/{consumergrpname}, async is false
+2018-10-15 16:19:51,461  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/consumer-groups/{consumergrpname}/consumers/{consumergrpconsumerserver}, async is false
+2018-10-15 16:19:51,467  main INFO  c.a.a.groups.GroupManager - GroupManager.pathAdded() : Firing event for server d84b6007-b59f-4e30-afed-7718236e4db0 of type qpid-server event type add to consumer group consumer-group-001 in group axgroup-001
+2018-10-15 16:19:51,468  main INFO  c.a.a.groups.GroupManager - GroupManager.pathAdded() : Firing event for server 48f99641-1ba0-46a5-8853-3955985cfc19 of type qpid-server event type add to consumer group consumer-group-001 in group axgroup-001
+2018-10-15 16:19:51,468  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/consumer-groups/{consumergrpname}/datastores/{consumergrpds}, async is false
+2018-10-15 16:19:51,474  main INFO  c.a.a.groups.GroupManager - GroupManager.pathAdded() : Firing event for server 937b7908-1311-4a42-8995-8cd2f800aec8,135a492f-d679-4a86-b7ee-d99708f00791 of type postgres-server event type add to consumer group consumer-group-001 in group axgroup-001
+2018-10-15 16:19:51,474  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/data-processors/{processortype}, async is false
+2018-10-15 16:19:51,479  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/data-processors/{processortype}/{processorname}, async is false
+2018-10-15 16:19:51,483  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/data-processors/{processortype}/{processorname}/processors/{processoruuid}, async is false
+2018-10-15 16:19:51,486  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/data-processors/{processortype}/{processorname}/datastores/{processordsuuid}, async is false
+2018-10-15 16:19:51,491  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/data-processors/{processortype}/{processorname}/properties/{procpropname}, async is false
+2018-10-15 16:19:51,497  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /analytics/groups/ax/{group_name}/consumer-groups/{consumergrpname}/properties/{consumergrpprops}, async is false
+2018-10-15 16:19:51,505  main INFO  SERVICES.COLLECTION - CollectionServiceImpl.datalakeIngestionStart() : Datalake Ingestion is turned off!!!
+2018-10-15 16:19:51,505  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CollectionService
+2018-10-15 16:19:51,529  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : APIClassificationService
+2018-10-15 16:19:51,529  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CompanyService
+2018-10-15 16:19:51,529  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : DeveloperAppService
+2018-10-15 16:19:51,531  main INFO  SERVICES.HEALTH_MONITOR - HealthMonitorServiceImpl.start() : Using standard HTTP client for target health checks.
+2018-10-15 16:19:51,531  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : HealthMonitorService
+2018-10-15 16:19:51,544  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key kms#10.213.13.16_10.213.13.18_10.213.13.19 for config name kms-datastore#dc-2#gateway-1#
+2018-10-15 16:19:51,546  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,546  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,548  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=kms-datastore#dc-2#gateway-1#,ServiceType=connectionpool
+2018-10-15 16:19:51,549  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:51,549  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:51,549  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:51,557  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/kms-datastore/{uuid}, async is true
+2018-10-15 16:19:51,563  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : KeyManagementService
+2018-10-15 16:19:51,568  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key kms#10.213.13.16_10.213.13.18_10.213.13.19 for config name kms-datastore
+2018-10-15 16:19:51,568  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : OAuth1RuntimeService
+2018-10-15 16:19:51,572  main WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: GatewayOrganizationCacheForKms has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:51,572  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : KMSOrganizationService
+2018-10-15 16:19:51,578  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key devconnect#10.213.13.16_10.213.13.18_10.213.13.19 for config name dc-datastore#dc-2#gateway-1#
+2018-10-15 16:19:51,579  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,580  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,581  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=dc-datastore#dc-2#gateway-1#,ServiceType=connectionpool
+2018-10-15 16:19:51,582  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:51,582  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:51,582  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:51,583  Apigee-Timer-2 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.19 to existing connectionPool kms-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,583  Apigee-Timer-6 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.18 to existing connectionPool kms-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,583  Apigee-Timer-8 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.16 to existing connectionPool kms-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,591  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/dc-datastore/{uuid}, async is true
+2018-10-15 16:19:51,598  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : DeveloperService
+2018-10-15 16:19:51,599  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : ApiProductService
+2018-10-15 16:19:51,600  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : AppService
+2018-10-15 16:19:51,600  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : KeyValueMapService
+2018-10-15 16:19:51,601  main INFO  EDGE_MICRO - EdgeMicroServiceImpl.start() : EdgeMicro Service started
+2018-10-15 16:19:51,601  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : EdgeMicroService
+2018-10-15 16:19:51,603  main INFO  HOSTED_TARGET - HostedTargetServiceImpl.start() : HostedTarget Service started
+ API:  Deploy Http Timeout {}s
+ OAuth API: http://localhost:3000
+ MP Region: 
+ Polling Threshold: dc-2s
+ Polling Rate: 300s
+2018-10-15 16:19:51,603  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : HostedTargetService
+2018-10-15 16:19:51,607  main WARN  KEYVALUEMAP.COMMON - Configuration.getIntProperty() : {code:keyvaluemap.service.PropertyConfigurationError, severity:NONE, component:KVM, category: SERVICE_FAILURE, faultflag:YES keyvaluemaps.jsonStringLengthWarningThresholdInChars=null, using default value: 512000
+2018-10-15 16:19:51,607  main WARN  KEYVALUEMAP.COMMON - Configuration.getIntProperty() : {code:keyvaluemap.service.PropertyConfigurationError, severity:NONE, component:KVM, category: SERVICE_FAILURE, faultflag:YES keyvaluemaps.warningThresholdLogIntervalInMins=null, using default value: 5
+2018-10-15 16:19:51,607  main WARN  KEYVALUEMAP.COMMON - Configuration.getIntProperty() : {code:keyvaluemap.service.PropertyConfigurationError, severity:NONE, component:KVM, category: SERVICE_FAILURE, faultflag:YES api.queryparam.kvm.count=null, using default value: 100
+2018-10-15 16:19:51,612  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key keyvaluemap#10.213.13.16_10.213.13.18_10.213.13.19 for config name keyvaluemap-datastore#dc-2#gateway-1#
+2018-10-15 16:19:51,613  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,613  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:51,614  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=keyvaluemap-datastore#dc-2#gateway-1#,ServiceType=connectionpool
+2018-10-15 16:19:51,615  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:51,615  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:51,615  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:51,617  Apigee-Timer-7 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.16 to existing connectionPool dc-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,618  Apigee-Timer-9 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.19 to existing connectionPool dc-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,618  Apigee-Timer-1 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.18 to existing connectionPool dc-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,628  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/gateway-1/types/keyvaluemap-datastore/{uuid}, async is true
+2018-10-15 16:19:51,635  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : LegacyKeyValueMapService
+2018-10-15 16:19:51,636  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : CpsKeyValueMapService
+2018-10-15 16:19:51,636  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : LoadBalancingManagementService
+2018-10-15 16:19:51,656  Apigee-Timer-3 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.19 to existing connectionPool keyvaluemap-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,657  Apigee-Timer-5 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.18 to existing connectionPool keyvaluemap-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:51,659  Apigee-Timer-3 INFO  KEYMANAGEMENT.COMMON - AbstractManagementDataStoreListener.serverAdded() : Added host 10.213.13.16 to existing connectionPool keyvaluemap-datastore#dc-2#gateway-1# for pod Pod{name='gateway-1', region='dc-2', tags=null} 
+2018-10-15 16:19:52,306  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.start() : Second level cache enabled = true
+2018-10-15 16:19:52,313  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.start() : Max Concurrent Requests 0
+2018-10-15 16:19:53,364  main INFO  HTTP.SERVER - HTTPServer.start() : ServerChannel[10.213.13.22:8998]@1 successfully bound
+2018-10-15 16:19:53,365  main INFO  HTTP.SERVER - HTTPServer.start() : ServerChannel[127.0.0.1:8998]@2 successfully bound
+2018-10-15 16:19:53,365  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.registerLoopBackServer() : Setting loopback server address to http://localhost:8998
+2018-10-15 16:19:53,368  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.start() : MessageProcessorServiceImpl read.trial.org.props is false
+2018-10-15 16:19:53,397  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.handleCustomQpidVariables() : Registering custom qpid variable x-apigee.edge.true_client_ip to be populated from flow variable request.header.True-client-ip
+2018-10-15 16:19:53,397  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : MessageProcessorService
+2018-10-15 16:19:53,403  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : MicroServiceContainer
+2018-10-15 16:19:53,403  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : OAuthService
+2018-10-15 16:19:53,405  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : OAuth2RuntimeService
+2018-10-15 16:19:53,405  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : OAuthV2Service
+2018-10-15 16:19:53,407  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : RateLimit
+2018-10-15 16:19:53,408  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : SecureStoreService
+2018-10-15 16:19:53,422  main INFO  NODESCRIPT - NodeScriptServiceImpl.start() : Will cache up to 2000 compiled JavaScript files in memory
+2018-10-15 16:19:53,424  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : NodeScriptService
+2018-10-15 16:19:53,427  main INFO  SenseService - SenseServiceImpl.start() : Starting SenseService
+2018-10-15 16:19:53,427  main INFO  SenseService - SenseServiceImpl.start() : SenseService task update interval 300
+2018-10-15 16:19:53,427  main INFO  SenseService - SenseServiceImpl.start() : SenseService allowTrialOrgs: false
+2018-10-15 16:19:53,429  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : SenseService
+2018-10-15 16:19:53,469  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : RuntimeConfigurationService
+2018-10-15 16:19:53,469  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : TargetResolutionService
+2018-10-15 16:19:53,471  main INFO  KERNEL.DEPLOYMENT - ServiceDeployer.startService() : ServiceDeployer.deploy() : Successfully started the service : JSONSubTypeRegisterService
+2018-10-15 16:19:53,476  main INFO  ZOOKEEPER - ZooKeeperServiceImpl.registerPathWatcher() : attaching watcher on path /regions/dc-2/pods/central/types/application-datastore/{uuid}, async is true
+2018-10-15 16:19:53,550  main INFO  DATASTORE.CASSANDRA - DataStoreServiceImpl.createConnectionPoolKey() : created connection pool key apprepo#10.213.13.16_10.213.13.18_10.213.13.19 for config name application-datastore
+2018-10-15 16:19:53,553  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultReadConsistencyLevel() : Default read ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:53,553  main INFO  m.p.c.m.ConfigurableConsistencyLevel - ConfigurableConsistencyLevel.setDefaultWriteConsistencyLevel() : Default write ConsistencyLevel set to: LOCAL_QUORUM.
+2018-10-15 16:19:53,556  main INFO  c.n.a.c.i.ConnectionPoolMBeanManager - ConnectionPoolMBeanManager.registerMonitor() : Registering mbean: com.netflix.MonitoredResources:type=ASTYANAX,name=application-datastore,ServiceType=connectionpool
+2018-10-15 16:19:53,557  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.18
+2018-10-15 16:19:53,557  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.19
+2018-10-15 16:19:53,557  main INFO  c.n.a.c.i.CountingConnectionPoolMonitor - CountingConnectionPoolMonitor.onHostAdded() : AddHost: 10.213.13.16
+2018-10-15 16:19:53,666  Apigee-Main-5 INFO  CPS_RUNTIME - CpsRuntimeServiceBase$3.run() : Initializing KvmServiceFactoryFacade
+2018-10-15 16:19:53,669  Apigee-Main-6 INFO  CPS_RUNTIME - CpsRuntimeServiceBase$2.run() : Initializing KmsServiceFactoryFacade
+2018-10-15 16:19:53,671  Apigee-Main-5 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ConnectionPool configuration options  for serviceType[KVM] and namespace[kvm.] is {LOCAL_CONSISTENCY_LEVEL=LOCAL_QUORUM, MAX_CONNECTIONS_PER_HOST=8, LOCAL_DC=dc-2, SOCKET_READ_TIMEOUT_MILLIS=10000, NON_LOCAL_CONSISTENCY_LEVEL=QUORUM, SOCKET_CONNECTION_TIMEOUT_MILLIS=10000}
+2018-10-15 16:19:53,671  Apigee-Main-7 INFO  CPS_RUNTIME - CpsRuntimeServiceBase$6.run() : Initializing TimeSeriesServiceFactoryFacade
+2018-10-15 16:19:53,671  Apigee-Main-5 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ServiceFactory options  for serviceType[KVM] and namespace[kvm.] is {ENABLE_PERSES=false, EDGEX_KMS_PG_DATABASE=edgex, EDGEX_KMS_PG_SCHEMA=kms, ENABLE_LOCAL_CACHE=true, TENANT_RING_CACHE_TTL_MINUTES=10000000}
+2018-10-15 16:19:53,671  Apigee-Main-5 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_password in properties
+2018-10-15 16:19:53,672  Apigee-Main-5 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_password in properties
+2018-10-15 16:19:53,672  Apigee-Main-5 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_user in properties
+2018-10-15 16:19:53,672  Apigee-Main-5 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_user in properties
+2018-10-15 16:19:53,672  Apigee-Main-8 INFO  CPS_RUNTIME - CpsRuntimeServiceBase$5.run() : Initializing CacheServiceFactoryFacade
+2018-10-15 16:19:53,678  Apigee-Main-6 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ConnectionPool configuration options  for serviceType[KMS] and namespace[kms.] is {LOCAL_CONSISTENCY_LEVEL=LOCAL_QUORUM, MAX_CONNECTIONS_PER_HOST=8, LOCAL_DC=dc-2, SOCKET_READ_TIMEOUT_MILLIS=10000, NON_LOCAL_CONSISTENCY_LEVEL=QUORUM, SOCKET_CONNECTION_TIMEOUT_MILLIS=10000}
+2018-10-15 16:19:53,678  Apigee-Main-7 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ConnectionPool configuration options  for serviceType[QUOTA] and namespace[timeseries.] is {LOCAL_CONSISTENCY_LEVEL=LOCAL_QUORUM, MAX_CONNECTIONS_PER_HOST=8, LOCAL_DC=dc-2, SOCKET_READ_TIMEOUT_MILLIS=10000, NON_LOCAL_CONSISTENCY_LEVEL=QUORUM, SOCKET_CONNECTION_TIMEOUT_MILLIS=10000}
+2018-10-15 16:19:53,679  Apigee-Main-8 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ConnectionPool configuration options  for serviceType[CACHE] and namespace[l2cache.] is {LOCAL_CONSISTENCY_LEVEL=LOCAL_ONE, MAX_CONNECTIONS_PER_HOST=8, LOCAL_DC=dc-2, SOCKET_READ_TIMEOUT_MILLIS=10000, NON_LOCAL_CONSISTENCY_LEVEL=ONE, SOCKET_CONNECTION_TIMEOUT_MILLIS=10000}
+2018-10-15 16:19:53,680  Apigee-Main-9 INFO  CPS_RUNTIME - CpsRuntimeServiceBase$4.run() : Initializing QuotaServiceFactoryFacade
+2018-10-15 16:19:53,680  Apigee-Main-7 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ServiceFactory options  for serviceType[QUOTA] and namespace[timeseries.] is {ENABLE_PERSES=false, EDGEX_KMS_PG_DATABASE=edgex, EDGEX_KMS_PG_SCHEMA=kms, ENABLE_LOCAL_CACHE=false, TENANT_RING_CACHE_TTL_MINUTES=10000000}
+2018-10-15 16:19:53,680  Apigee-Main-8 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ServiceFactory options  for serviceType[CACHE] and namespace[l2cache.] is {ENABLE_PERSES=false, EDGEX_KMS_PG_DATABASE=edgex, EDGEX_KMS_PG_SCHEMA=kms, ENABLE_LOCAL_CACHE=true, TENANT_RING_CACHE_TTL_MINUTES=10000000}
+2018-10-15 16:19:53,681  Apigee-Main-9 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ConnectionPool configuration options  for serviceType[QUOTA] and namespace[quota.] is {LOCAL_CONSISTENCY_LEVEL=LOCAL_QUORUM, MAX_CONNECTIONS_PER_HOST=8, LOCAL_DC=dc-2, SOCKET_READ_TIMEOUT_MILLIS=10000, NON_LOCAL_CONSISTENCY_LEVEL=QUORUM, SOCKET_CONNECTION_TIMEOUT_MILLIS=10000}
+2018-10-15 16:19:53,681  Apigee-Main-7 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_password in properties
+2018-10-15 16:19:53,682  Apigee-Main-8 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_password in properties
+2018-10-15 16:19:53,683  Apigee-Main-9 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ServiceFactory options  for serviceType[QUOTA] and namespace[quota.] is {ENABLE_PERSES=false, EDGEX_KMS_PG_DATABASE=edgex, EDGEX_KMS_PG_SCHEMA=kms, ENABLE_LOCAL_CACHE=false, TENANT_RING_CACHE_TTL_MINUTES=10000000}
+2018-10-15 16:19:53,683  Apigee-Main-7 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_password in properties
+2018-10-15 16:19:53,684  Apigee-Main-8 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_password in properties
+2018-10-15 16:19:53,684  Apigee-Main-9 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_password in properties
+2018-10-15 16:19:53,684  Apigee-Main-7 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_user in properties
+2018-10-15 16:19:53,685  Apigee-Main-8 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_user in properties
+2018-10-15 16:19:53,685  Apigee-Main-9 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_password in properties
+2018-10-15 16:19:53,685  Apigee-Main-7 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_user in properties
+2018-10-15 16:19:53,685  Apigee-Main-8 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_user in properties
+2018-10-15 16:19:53,686  Apigee-Main-9 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_user in properties
+2018-10-15 16:19:53,687  Apigee-Main-9 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_user in properties
+2018-10-15 16:19:53,690  Apigee-Main-6 INFO  CpsLibrary - CpsServiceFactoryFacade.getCpsServiceFactoryFacade() : ServiceFactory options  for serviceType[KMS] and namespace[kms.] is {PERSES_PERIOD=300, LOCAL_CACHE_NON_TOKEN_TTL_IN_SECS=180, ENABLE_PERSES=true, EDGEX_KMS_PG_DATABASE=edgex, LOCAL_CACHE_TOKEN_TTL_IN_SECS=180, EDGEX_KMS_PG_SCHEMA=kms, PERSES_REGION_AWARE=false, ENABLE_LOCAL_CACHE=true, LOCAL_CACHE_APP_CREDENTIAL_TTL_IN_SECS=180, TENANT_RING_CACHE_TTL_MINUTES=10000000}
+2018-10-15 16:19:53,691  Apigee-Main-6 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_password in properties
+2018-10-15 16:19:53,691  Apigee-Main-6 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_password in properties
+2018-10-15 16:19:53,691  Apigee-Main-6 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.default.dml_user in properties
+2018-10-15 16:19:53,692  Apigee-Main-6 INFO  CpsLibrary - AbstractCredentialsStore.getCredentialsMap() : Value is empty for property:cassandra.hipaa-ring01.dml_user in properties
+2018-10-15 16:19:53,710  Apigee-Main-5 INFO  CPS_RUNTIME - CpsRuntimeServiceBase.getRingsRelevantToMessageProcessor() : No rings configured; skipping initialization of servicetype:KVM
+2018-10-15 16:19:53,710  Apigee-Main-7 INFO  CPS_RUNTIME - CpsRuntimeServiceBase.getRingsRelevantToMessageProcessor() : No rings configured; skipping initialization of servicetype:QUOTA
+2018-10-15 16:19:53,711  Apigee-Main-8 INFO  CPS_RUNTIME - CpsRuntimeServiceBase.getRingsRelevantToMessageProcessor() : No rings configured; skipping initialization of servicetype:CACHE
+2018-10-15 16:19:53,711  Apigee-Main-6 INFO  CPS_RUNTIME - CpsRuntimeServiceBase.getRingsRelevantToMessageProcessor() : No rings configured; skipping initialization of servicetype:KMS
+2018-10-15 16:19:53,714  Apigee-Main-9 INFO  CPS_RUNTIME - CpsRuntimeServiceBase.getRingsRelevantToMessageProcessor() : No rings configured; skipping initialization of servicetype:QUOTA
+2018-10-15 16:19:53,760 org:agcs-sg-prod env:-  pool-44-thread-2 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Loading Organization : agcs-sg-prod
+2018-10-15 16:19:53,760 org:ph-lh-prod env:-  pool-44-thread-3 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Loading Organization : ph-lh-prod
+2018-10-15 16:19:53,760 org:agcs-hk-prod env:-  pool-44-thread-1 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Loading Organization : agcs-hk-prod
+2018-10-15 16:19:53,760 org:th-lh-prod env:-  pool-44-thread-4 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Loading Organization : th-lh-prod
+2018-10-15 16:19:53,875  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:53,875  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for ph-lh-prod 
+2018-10-15 16:19:53,875  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@577e288e 
+2018-10-15 16:19:53,876  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id ph-lh-prod with scope ph-lh-prod~
+2018-10-15 16:19:53,877  Apigee-Timer-4 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:53,877  Apigee-Timer-4 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for agcs-hk-prod 
+2018-10-15 16:19:53,877  Apigee-Timer-4 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@1d9c23b2 
+2018-10-15 16:19:53,877  Apigee-Timer-4 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id agcs-hk-prod with scope agcs-hk-prod~
+2018-10-15 16:19:53,878  Apigee-Timer-0 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:53,878  Apigee-Timer-0 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for th-lh-prod 
+2018-10-15 16:19:53,878  Apigee-Timer-0 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@674a1737 
+2018-10-15 16:19:53,878  Apigee-Timer-0 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id th-lh-prod with scope th-lh-prod~
+2018-10-15 16:19:53,879  Apigee-Timer-2 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:53,879  Apigee-Timer-2 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for agcs-sg-prod 
+2018-10-15 16:19:53,879  Apigee-Timer-2 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@56f77394 
+2018-10-15 16:19:53,879  Apigee-Timer-2 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id agcs-sg-prod with scope agcs-sg-prod~
+2018-10-15 16:19:53,909 org:agcs-hk-prod env:-  pool-44-thread-1 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Organization agcs-hk-prod loaded successfully
+2018-10-15 16:19:53,918 org:agcs-sg-prod env:-  pool-44-thread-2 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Organization agcs-sg-prod loaded successfully
+2018-10-15 16:19:53,919 org:ph-lh-prod env:-  pool-44-thread-3 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Organization ph-lh-prod loaded successfully
+2018-10-15 16:19:53,924 org:th-lh-prod env:-  pool-44-thread-4 INFO  MESSAGING.RUNTIME - OrganizationManager.syncOrganization() : Organization th-lh-prod loaded successfully
+2018-10-15 16:19:54,092 org:agcs-sg-prod env:prod  pool-44-thread-5 WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: agcs-sg-prod__prod has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:54,093  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:54,093 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  MESSAGING.RUNTIME - EnvironmentManager.syncEnvironment() : Environment prod in organization agcs-sg-prod loaded successfully
+2018-10-15 16:19:54,098 org:th-lh-prod env:prod  pool-44-thread-6 WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: th-lh-prod__prod has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:54,107  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for agcs-sg-prod__prod 
+2018-10-15 16:19:54,108 org:agcs-hk-prod env:prod  pool-44-thread-7 WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: agcs-hk-prod__prod has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:54,109 org:th-lh-prod env:prod  pool-44-thread-6 INFO  MESSAGING.RUNTIME - EnvironmentManager.syncEnvironment() : Environment prod in organization th-lh-prod loaded successfully
+2018-10-15 16:19:54,115 org:agcs-hk-prod env:prod  pool-44-thread-7 INFO  MESSAGING.RUNTIME - EnvironmentManager.syncEnvironment() : Environment prod in organization agcs-hk-prod loaded successfully
+2018-10-15 16:19:54,115  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:54,116  Apigee-Timer-7 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Creating DataPusher for agcs-sg-prod~prod in group Group{name='axgroup-001'}
+2018-10-15 16:19:54,135  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:54,138 org:ph-lh-prod env:prod  pool-44-thread-8 WARN  n.s.e.c.CacheConfiguration - CacheConfiguration.warnMaxEntriesLocalHeap() : Cache: ph-lh-prod__prod has a maxElementsInMemory of 0. This might lead to performance degradation or OutOfMemoryError at Terracotta client.From Ehcache 2.0 onwards this has been changed to mean a store with no capacity limit. Set it to 1 if you want no elements cached in memory
+2018-10-15 16:19:54,141  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for th-lh-prod__prod 
+2018-10-15 16:19:54,143  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for agcs-hk-prod__prod 
+2018-10-15 16:19:54,143  Apigee-Timer-7 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Created DataPusher for agcs-sg-prod~prod with min batch size of 50 and max batch szie of 50
+2018-10-15 16:19:54,144  Apigee-Timer-5 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Creating DataPusher for th-lh-prod~prod in group Group{name='axgroup-001'}
+2018-10-15 16:19:54,144  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector.startCollection() : Collector.startCollection : Analytics are enabled.
+2018-10-15 16:19:54,144  Apigee-Timer-3 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Creating DataPusher for agcs-hk-prod~prod in group Group{name='axgroup-001'}
+2018-10-15 16:19:54,146  Apigee-Timer-5 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Created DataPusher for th-lh-prod~prod with min batch size of 50 and max batch szie of 50
+2018-10-15 16:19:54,146  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPushers() : Collector.startCollection : Starting Group Based Statistics collection service for ph-lh-prod__prod 
+2018-10-15 16:19:54,146  Apigee-Timer-3 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Created DataPusher for agcs-hk-prod~prod with min batch size of 50 and max batch szie of 50
+2018-10-15 16:19:54,146  Apigee-Timer-8 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Creating DataPusher for ph-lh-prod~prod in group Group{name='axgroup-001'}
+2018-10-15 16:19:54,147  Apigee-Timer-8 INFO  SERVICES.COLLECTION - DataPusher.<init>() : Created DataPusher for ph-lh-prod~prod with min batch size of 50 and max batch szie of 50
+2018-10-15 16:19:54,159 org:ph-lh-prod env:prod  pool-44-thread-8 INFO  MESSAGING.RUNTIME - EnvironmentManager.syncEnvironment() : Environment prod in organization ph-lh-prod loaded successfully
+2018-10-15 16:19:54,498  Apigee-Timer-3 INFO  SERVICES.COLLECTION - GroupDataPusher.getQpidsFromGroup() : List of qpids to create connections is [48f99641-1ba0-46a5-8853-3955985cfc19]
+2018-10-15 16:19:54,504  Apigee-Timer-5 INFO  SERVICES.COLLECTION - GroupDataPusher.getQpidsFromGroup() : List of qpids to create connections is [48f99641-1ba0-46a5-8853-3955985cfc19]
+2018-10-15 16:19:54,504  Apigee-Timer-8 INFO  SERVICES.COLLECTION - GroupDataPusher.getQpidsFromGroup() : List of qpids to create connections is [48f99641-1ba0-46a5-8853-3955985cfc19]
+2018-10-15 16:19:54,581  Apigee-Timer-7 INFO  SERVICES.COLLECTION - GroupDataPusher.getQpidsFromGroup() : List of qpids to create connections is [48f99641-1ba0-46a5-8853-3955985cfc19]
+2018-10-15 16:19:54,728 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod in Organization agcs-sg-prod
+2018-10-15 16:19:54,731 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod loaded successfully in organization agcs-sg-prod
+2018-10-15 16:19:54,734 org:th-lh-prod env:prod  pool-44-thread-6 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod in Organization th-lh-prod
+2018-10-15 16:19:54,735 org:th-lh-prod env:prod  pool-44-thread-6 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod loaded successfully in organization th-lh-prod
+2018-10-15 16:19:54,742 org:ph-lh-prod env:prod  pool-44-thread-8 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod in Organization ph-lh-prod
+2018-10-15 16:19:54,743 org:ph-lh-prod env:prod  pool-44-thread-8 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod loaded successfully in organization ph-lh-prod
+2018-10-15 16:19:54,846 org:agcs-hk-prod env:prod  pool-44-thread-7 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod in Organization agcs-hk-prod
+2018-10-15 16:19:54,848 org:agcs-hk-prod env:prod  pool-44-thread-7 INFO  classification-entity - EnvironmentManager.syncEnvironment() : Environment prod loaded successfully in organization agcs-hk-prod
+2018-10-15 16:19:55,082 org:th-lh-prod env:prod  pool-44-thread-6 INFO  classification-entity - VirtualHost.handleAdd() : Adding a new virtual host with identifier : secure
+2018-10-15 16:19:55,099 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  classification-entity - VirtualHost.handleAdd() : Adding a new virtual host with identifier : secure
+2018-10-15 16:19:55,100 org:ph-lh-prod env:prod  pool-44-thread-8 INFO  classification-entity - VirtualHost.handleAdd() : Adding a new virtual host with identifier : secure
+2018-10-15 16:19:55,120 org:agcs-hk-prod env:prod  pool-44-thread-7 INFO  classification-entity - VirtualHost.handleAdd() : Adding a new virtual host with identifier : secure
+2018-10-15 16:19:55,378 org:agcs-sg-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:55,477 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:55,479 org:agcs-sg-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:55,664 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:55,665 org:agcs-sg-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:55,721  Apigee-Timer-8 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Using fanout mode while creating producer for group axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,722  Apigee-Timer-8 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Building producer to Exchange/Queue ax-ex-axgroup-001/ax-q-axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,725  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Built connections to group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@2c8cfe33
+2018-10-15 16:19:55,725  Apigee-Timer-8 INFO  SERVICES.COLLECTION - DataPusher.start() : DataPusher.start : Context = CollectorContext{Organization=ph-lh-prod,Environment=prod,}
+2018-10-15 16:19:55,726  Apigee-Timer-7 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Using fanout mode while creating producer for group axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,726  Apigee-Timer-7 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Building producer to Exchange/Queue ax-ex-axgroup-001/ax-q-axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,726  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Built connections to group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@414fa754
+2018-10-15 16:19:55,726  Apigee-Timer-7 INFO  SERVICES.COLLECTION - DataPusher.start() : DataPusher.start : Context = CollectorContext{Organization=agcs-sg-prod,Environment=prod,}
+2018-10-15 16:19:55,728  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Started group data pusher 626533701 for group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@2c8cfe33
+2018-10-15 16:19:55,729  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@df8dba8 
+2018-10-15 16:19:55,729  Apigee-Timer-8 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id ph-lh-prod__prod with scope ph-lh-prod~prod
+2018-10-15 16:19:55,729  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Started group data pusher 926042776 for group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@414fa754
+2018-10-15 16:19:55,729  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@588905ef 
+2018-10-15 16:19:55,729  Apigee-Timer-3 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Using fanout mode while creating producer for group axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,729  Apigee-Timer-5 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Using fanout mode while creating producer for group axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,729  Apigee-Timer-7 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id agcs-sg-prod__prod with scope agcs-sg-prod~prod
+2018-10-15 16:19:55,730  Apigee-Timer-3 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Building producer to Exchange/Queue ax-ex-axgroup-001/ax-q-axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,730  Apigee-Timer-5 INFO  SERVICES.COLLECTION - DataPusher.createProducers() : Building producer to Exchange/Queue ax-ex-axgroup-001/ax-q-axgroup-001 to QPID 48f99641-1ba0-46a5-8853-3955985cfc19
+2018-10-15 16:19:55,731  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Built connections to group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@6527f5d8
+2018-10-15 16:19:55,731  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Built connections to group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@41e51de2
+2018-10-15 16:19:55,733  Apigee-Timer-3 INFO  SERVICES.COLLECTION - DataPusher.start() : DataPusher.start : Context = CollectorContext{Organization=agcs-hk-prod,Environment=prod,}
+2018-10-15 16:19:55,733  Apigee-Timer-5 INFO  SERVICES.COLLECTION - DataPusher.start() : DataPusher.start : Context = CollectorContext{Organization=th-lh-prod,Environment=prod,}
+2018-10-15 16:19:55,734  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Started group data pusher 1824022844 for group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@6527f5d8
+2018-10-15 16:19:55,734  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@bd96d46 
+2018-10-15 16:19:55,735  Apigee-Timer-3 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id agcs-hk-prod__prod with scope agcs-hk-prod~prod
+2018-10-15 16:19:55,736  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector.buildGroupDataPusher() : Started group data pusher 1283072022 for group Group{name='axgroup-001'} in Collector  com.apigee.analytics.Collector@41e51de2
+2018-10-15 16:19:55,736  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector$1.run() : started data pushers in collector com.apigee.analytics.Collector$1@31c75004 
+2018-10-15 16:19:55,736  Apigee-Timer-5 INFO  SERVICES.COLLECTION - Collector$1.run() : Added collector as listener for context id th-lh-prod__prod with scope th-lh-prod~prod
+2018-10-15 16:19:55,792 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:55,945 org:th-lh-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:55,946 org:agcs-hk-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/example-api-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:56,041 org:agcs-hk-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/example-api-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:56,041 org:th-lh-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:56,203 org:agcs-hk-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/example-api-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:56,204 org:th-lh-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/example-api-v1_rev2_2018_09_12/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:56,436 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:56,556 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:56,664 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:56,664 org:ph-lh-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:56,765 org:ph-lh-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:56,765 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected missing server d84b6007-b59f-4e30-afed-7718236e4db0,48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,765 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,774 org:th-lh-prod env:prod  DataPusherThread-3 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected missing server d84b6007-b59f-4e30-afed-7718236e4db0,48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,775 org:th-lh-prod env:prod  DataPusherThread-3 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,775 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected missing server d84b6007-b59f-4e30-afed-7718236e4db0,48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,776 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,779 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,779 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,800 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,800 org:th-lh-prod env:prod  DataPusherThread-3 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,801 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,803 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,804 org:th-lh-prod env:prod  DataPusherThread-3 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,815 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,816 org:agcs-hk-prod env:prod  DataPusherThread-2 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected extra server 48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,817 org:th-lh-prod env:prod  DataPusherThread-3 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,817 org:ph-lh-prod env:prod  DataPusherThread-0 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected extra server 48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,818 org:th-lh-prod env:prod  DataPusherThread-3 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected extra server 48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected missing server d84b6007-b59f-4e30-afed-7718236e4db0,48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  SERVICES.COLLECTION - GroupDataPusher.onServerRemoved() : Qpid server 48f99641-1ba0-46a5-8853-3955985cfc19 has been removed to group axgroup-001
+2018-10-15 16:19:56,881 org:agcs-sg-prod env:prod  DataPusherThread-1 INFO  c.a.a.groups.GroupManager - GroupManager.validateServerList() : Detected extra server 48f99641-1ba0-46a5-8853-3955985cfc19 in group axgroup-001
+2018-10-15 16:19:56,890 org:ph-lh-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:57,279 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:57,377 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:57,562 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:57,564 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:57,667 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:57,765 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth-verification-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:57,864 org:agcs-sg-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:57,968 org:agcs-sg-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:58,068 org:agcs-sg-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:58,517 org:ph-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:58,701 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:58,701 org:ph-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:58,798 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:58,799 org:ph-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:58,931 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,072 org:th-lh-prod env:prod  pool-44-thread-7 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,168 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,169 org:th-lh-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,170 org:agcs-sg-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/quota-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,171 org:th-lh-prod env:prod  pool-44-thread-7 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:59,299 org:agcs-hk-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/get-code/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,299 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:59,438 org:agcs-sg-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/quota-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:59,438 org:th-lh-prod env:prod  pool-44-thread-7 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/No-Target/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,440 org:th-lh-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:59,440 org:agcs-hk-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/get-code/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:19:59,532 org:ph-lh-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/ph-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,663 org:agcs-hk-prod env:prod  pool-44-thread-10 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/get-code/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,668 org:agcs-sg-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/quota-v1/revisions/2/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,669 org:th-lh-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:19:59,803 org:agcs-sg-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth2-v1/revisions/8/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:19:59,899 org:agcs-sg-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth2-v1/revisions/8/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:00,004 org:agcs-sg-prod env:prod  pool-44-thread-9 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/oauth2-v1/revisions/8/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:00,006 org:agcs-hk-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:00,113 org:agcs-hk-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:00,208 org:agcs-hk-prod env:prod  pool-44-thread-1 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:00,529 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123141/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:00,530 org:th-lh-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/verify-api-key/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:00,624 org:th-lh-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/verify-api-key/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:00,626 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123141/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:00,807 org:agcs-sg-prod env:prod  pool-44-thread-5 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/test123141/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:00,808 org:th-lh-prod env:prod  pool-44-thread-6 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/verify-api-key/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:01,221 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:01,315 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/quota-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:01,317 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:01,320 org:agcs-sg-prod env:prod  pool-44-thread-5 WARN  S.HTTPCLIENTSERVICE - DNSCache$2.failed() : Failed to resolve hostname test3131. Reason test3131: Name or service not known. This log message will snooze for 2 hours
+2018-10-15 16:20:01,496 org:agcs-sg-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:01,497 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/quota-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:01,628 org:th-lh-prod env:prod  pool-44-thread-2 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/th-lh-prod/environments/prod/apiproxies/oauth2-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:01,630 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/example-api-v1/revisions/6/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errormessage
+2018-10-15 16:20:01,811 org:agcs-sg-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:01,812 org:agcs-hk-prod env:prod  pool-44-thread-8 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-hk-prod/environments/prod/apiproxies/quota-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:01,905 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/example-api-v1/revisions/6/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/errorcode
+2018-10-15 16:20:01,907 org:agcs-sg-prod env:prod  pool-44-thread-4 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/extract-org-info-v1/revisions/1/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:02,082 org:agcs-sg-prod env:prod  pool-44-thread-3 INFO  ZOOKEEPER - ZooKeeperServiceImpl.delete() : deleting path recursively /organizations/agcs-sg-prod/environments/prod/apiproxies/example-api-v1/revisions/6/statuses/0ede3a10-a98f-4cb7-8c66-afc5d8df2067/stacktrace
+2018-10-15 16:20:04,881  main INFO  REGISTRATION - ServerRegistrationServiceImpl.storeServerRegistrationPath() : Registering the server uuid 0ede3a10-a98f-4cb7-8c66-afc5d8df2067 with region dc-2 and pod gateway-1 information
+2018-10-15 16:20:04,901  Apigee-Timer-5 INFO  METRICSLOGGING - MetricsLogger.log() :  Release id 180406_02 RPM apigee-rpm-1.0.0.1580.86e1e62.1805011745-180406_02
+        CACHE.total [queue_remaining=500]
+        NIO.0.selectors [currentServers=2 closeSuccessful=4 maximumConnectionsOpened=1 accepted=4]
+        NIO.1.selectors [closeSuccessful=4 accepted=4 currentServers=2 maximumConnectionsOpened=1]
+        NIO.total [accepted=8 closeSuccessful=8 maximumConnectionsOpened=2 currentServers=2]
+        THREADPOOL.Main.statistics [activeThreadCount=1 completedTaskCount=13 corePoolSize=10 largestPoolSize=10 currentPoolSize=10 maxAllowedPoolSize=100]
+        THREADPOOL.Timer.statistics [corePoolSize=10 currentPoolSize=10 activeThreadCount=1 completedTaskCount=81 maxAllowedPoolSize=2147483647 largestPoolSize=10]
+        ZOOKEEPER.configuration [connectInfo=State:CONNECTED Timeout:40000 sessionid:0x6665cbc0fdb0006 local:/10.213.13.22:37692 remoteserver:10.213.13.19/10.213.13.19:2181 lastZxid:94489282411 xid:3044 sent:3044 recv:3045 queuedpkts:1 pendingresp:0 queuedevents:0]
+        ZOOKEEPER.counters [operations=2993 successfulOperations=2893]
+        ZOOKEEPER.operations [exists=1733 setData=87 getData=681 getChildren=419 delete=72]
+        ZOOKEEPER.pathWatcher [create=29 add=62]
+        ZOOKEEPER.statistics [operations=2893]
+
+2018-10-15 16:20:05,013  main INFO  CLUSTER - ServerScopeInfo.getScopes() : fetching scopes for scope ServerScope{organization='agcs-sg-prod', environment='prod'}
+2018-10-15 16:20:05,018  main INFO  CLUSTER - ServerScopeInfo.getScopes() : fetching scopes for scope ServerScope{organization='th-lh-prod', environment='prod'}
+2018-10-15 16:20:05,022  main INFO  CLUSTER - ServerScopeInfo.getScopes() : fetching scopes for scope ServerScope{organization='ph-lh-prod', environment='prod'}
+2018-10-15 16:20:05,026  main INFO  CLUSTER - ServerScopeInfo.getScopes() : fetching scopes for scope ServerScope{organization='agcs-hk-prod', environment='prod'}
+2018-10-15 16:20:05,033  main INFO  SERVICES.CACHE - CacheMemoryLimiter.init() : CacheMemoryLimiter on=true persentage of heap to use is=35
+2018-10-15 16:20:05,034  main INFO  SERVICES.CACHE - CacheMemoryLimiter.init() : CacheMemoryLimiter maxMemory is 355M. CacheLimit is 83M
+2018-10-15 16:20:05,040  main INFO  SERVICES.CACHE - CacheServiceImpl$2.run() : Successfully initialized cache memory limiter
+2018-10-15 16:20:05,056  pool-58-thread-1 INFO  CLUSTER - PodLeaderWatcher.register() : Registering the watcher for path /leaderelection/dc-1/gateway
+2018-10-15 16:20:05,074  pool-58-thread-1 INFO  CLUSTER - PodLeaderWatcher.register() : Registering the watcher for path /leaderelection/dc-2/gateway-1
+2018-10-15 16:20:05,142  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.waitForBootUpTasks() : waiting for bootup tasks to be complete...
+2018-10-15 16:20:05,142  main INFO  MESSAGING.CONFIGURATION - MessageProcessorServiceImpl.waitForBootUpTasks() : bootup tasks completed
+2018-10-15 16:20:05,265  main INFO  ORGANIZATIONS - OrganizationPropertiesWatcher.register() : Registering the watcher for path /organizations/agcs-hk-prod/properties
+2018-10-15 16:20:05,288  main INFO  ORGANIZATIONS - OrganizationPropertiesWatcher.register() : Registering the watcher for path /organizations/agcs-sg-prod/properties
+2018-10-15 16:20:05,311  main INFO  ORGANIZATIONS - OrganizationPropertiesWatcher.register() : Registering the watcher for path /organizations/ph-lh-prod/properties
+2018-10-15 16:20:05,334  main INFO  ORGANIZATIONS - OrganizationPropertiesWatcher.register() : Registering the watcher for path /organizations/th-lh-prod/properties
+2018-10-15 16:20:05,336  main INFO  KERNEL - MicroKernel.main() : MicroKernel.main() : MicroKernel started successfully, proceeding to wait indefinitely.
